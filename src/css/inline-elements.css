@@ -1,0 +1,17 @@
+:where(abbr[title]) {
+  cursor: help;
+}
+
+:where(code,
+kbd, small) {
+  font-family: var(--root-mono__font-family, monospace);
+  font-size: smaller;
+}
+
+:where(code) {
+  padding: 0.2em 0.4em;
+  color: var(--code__color, currentColor);
+  background-color: var(--code__bg-color, initial);
+  border-radius: 6px;
+  word-wrap: break-word;
+}

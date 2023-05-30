@@ -1,0 +1,581 @@
+/* border-box box model for all html elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  /* boost font sizes on small screens on some smartphones and tablets */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
+  /*
+    inherit browsers font size which depends on browsers settings,
+    by default it is 16px
+  */
+  font-size: var(--root__font-size, inherit); /* default = 16px */
+
+  /* same line-height for all browsers */
+  line-height: var(--root__line-height, 1.5); /* default = 1.2 */
+
+  /* sans-serif font by default */
+  font-family: var(--root__font-family, sans-serif);
+
+  /* use default browser background-color rgba(0, 0, 0, 0) = transparent */
+  background-color: var(--root__bg-color, inherit);
+
+  /* use default browser color "CanvasText" = rgb(0, 0, 0) */
+  color: var(--root__color, initial);
+
+  /*
+    browser emphasizes rendering speed
+    over legibility and geometric precision when drawing text.
+    It disables kerning and ligatures.
+  */
+  text-rendering: optimizeSpeed;
+
+  /*
+    color for user-interface controls
+    checkbox, radio, range, progress
+  */
+  accent-color: var(--root__accent-color, auto);
+  /*
+    browser with OS will try to modify some controls
+    (canvas color, form controls, scrollbars, etc.)
+    based on color schema settings
+  */
+  color-scheme: var(--root__color-scheme, normal);
+}
+/* set smooth scrolling only if the user prefers it */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: var(--root__scroll-behavior, auto);
+  }
+}
+/* default focus outline */
+/* by default similar to webkit default focus outline */
+:where(:focus-visible) {
+  outline-offset: var(--root-focus-visible__outline-offset, 0);
+  outline-color: var(--root-focus-visible__outline-color, #842685b3);
+  outline-style: var(--root-focus-visible__outline-style, auto);
+  outline-width: var(--root-focus-visible__outline-width, .2ex);
+}
+/* text section style */
+::selection {
+  background-color: var(--root-selection__bg-color, #8426854d);
+  color: var(--root-selection__color, curentColor);
+}
+[hidden] {
+  display: none !important;
+}
+:where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+) {
+  /* Override user agent default margins */
+  /* Set it to 0 for a better styling control */
+  margin-block: 0;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto; /* for Safari */
+  hyphens: auto;
+  /* experimental text-wrap: balance for large headings */
+  text-wrap: balance;
+
+}
+/* line-height adjustments for additional headings */
+:where(.text-style10, .text-style9) {
+  line-height: 1;
+}
+:where(.text-style8,.text-style7) {
+  line-height: 1.1;
+}
+:where(
+  .text-style10,
+  .text-style9,
+  .text-style8,
+  .text-style7
+  .text-style6,
+  .text-style5,
+  .text-style4,
+  .text-style3,
+  .text-style2,
+  .text-style1,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+) {
+  font-family: var(--heading__font-family, var(--root__font-family));
+  font-weight: var(--heading__font-weight, 700);
+  color: var(--heading__color, currentColor);
+}
+/* additional styles for headings fot bigger headings (7-10) */
+.text-style10 {
+  --heading__font-family: var(--text-style10__font-family);
+  --heading__font-weight: var(--text-style10__font-weight);
+  --heading__color: var(--text-style10__color);
+  font-size: var(--text-style10__font-size, 5.16rem);
+}
+.text-style9 {
+  --heading__font-family: var(--text-style9__font-family);
+  --heading__font-weight: var(--text-style9__font-weight);
+  --heading__color: var(--text-style9__color);
+  font-size: var(--text-style9__font-size, 4.3rem);
+}
+.text-style8 {
+  --heading__font-family: var(--text-style8__font-family);
+  --heading__font-weight: var(--text-style8__font-weight);
+  --heading__color: var(--text-style8__color);
+  font-size: var(--text-style8__font-size, 3.583rem);
+}
+.text-style7 {
+  --heading__font-family: var(--text-style7__font-family);
+  --heading__font-weight: var(--text-style7__font-weight);
+  --heading__color: var(--text-style7__color);
+  font-size: var(--text-style7__font-size, 2.986rem);
+}
+/* default headings */
+:where(h1), .text-style6 {
+  --heading__font-family: var(--text-style6__font-family);
+  --heading__font-weight: var(--text-style6__font-weight);
+  --heading__color: var(--text-style6__color);
+  font-size: var(--text-style6__font-size, 2.488rem);
+}
+:where(h2), .text-style5 {
+  --heading__font-family: var(--text-style5__font-family);
+  --heading__font-weight: var(--text-style5__font-weight);
+  --heading__color: var(--text-style5__color);
+  font-size: var(--text-style5__font-size, 2.074rem);
+}
+:where(h3), .text-style4 {
+  --heading__font-family: var(--text-style4__font-family);
+  --heading__font-weight: var(--text-style4__font-weight);
+  --heading__color: var(--text-style4__color);
+  font-size: var(--text-style4__font-size, 1.728rem);
+}
+:where(h4), .text-style3 {
+  --heading__font-family: var(--text-style3__font-family);
+  --heading__font-weight: var(--text-style3__font-weight);
+  --heading__color: var(--text-style3__color);
+  font-size: var(--text-style3__font-size, 1.44rem);
+}
+:where(h5), .text-style2 {
+  --heading__font-family: var(--text-style2__font-family);
+  --heading__font-weight: var(--text-style2__font-weight);
+  --heading__color: var(--text-style2__color);
+  font-size: var(--text-style2__font-size, 1.2rem);
+}
+:where(h6), .text-style1 {
+  --heading__font-family: var(--text-style1__font-family);
+  --heading__font-weight: var(--text-style1__font-weight);
+  --heading__color: var(--text-style1__color);
+  font-size: var(--text-style1__font-size, 1rem);
+}
+/* focus-visible settings for links */
+/* with possibility to override them in the root css file specificly for links */
+:where(a:not(.button-style)):focus-visible {
+  outline-offset: var(--link-focus-visible__outline-offset, var(--root-focus-visible__outline-offset));
+  outline-color: var(--link-focus-visible__outline-color, var(--root-focus-visible__outline-color));
+  outline-style: var(--link-focus-visible__outline-style, var(--root-focus-visible__outline-style));
+  outline-width: var(--link-focus-visible__outline-width, var(--root-focus-visible__outline-width));
+}
+:where(a:not(.button-style)) {
+  display: inline-flex;
+  gap: 0.3ch;
+  align-items: baseline;
+  font-size: var(--link__font-size, inherit);
+  font-family: var(--link__font-family, inherit);
+  font-weight: var(--link__font-weight, inherit);
+  color: var(--link__color, #0052c0);
+  text-underline-offset: var(--link__text-underline-offset, auto);
+  text-decoration-line: var(--link__text-decoration-line, underline);
+  text-decoration-thickness: var(--link__text-decoration-thickness, auto);
+  text-decoration-style: var(--link__text-decoration-style, solid);
+  text-decoration-color: var(--link__text-decoration-color, currentColor);
+}
+:where(a:not(.button-style):visited) {
+  color: var(--link-visited__color, #551a8b);
+}
+:where(a:not(.button-style):hover) {
+  --link__color: var(--link-hover__color, currentColor);
+  --link-visited__color: var(--link-hover__color, currentColor);
+  --link__text-underline-offset: var(--link-hover__text-underline-offset, auto);
+  --link__text-decoration-line: var(--link-hover__text-decoration-line, underline);
+  --link__text-decoration-thickness: var(--link-hover__text-decoration-thickness, auto);
+  --link__text-decoration-style: var(--link-hover__text-decoration-style, solid);
+  --link__text-decoration-color: var(--link-hover__text-decoration-color, currentColor);
+}
+/* remove link styles from <a> without href attribute and class */
+:where(a:not([href]):not([class]), a:not([href]):not([class]):hover) {
+  color: inherit;
+  text-decoration: none;
+}
+:where(a:not(.button-style) > svg) {
+  height: 1em;
+  width: 1em;
+  fill: currentcolor;
+  /* transform: translateY(1px); */
+  align-self: center;
+  flex-shrink: 0;
+}
+/* Link Helpers */
+/* [ icon-start ] or [ icon-end ] */
+/* links with icons to the left[start] or right[end] */
+:where(a:not(.button-style).icon-start) {
+  flex-direction: row-reverse;
+}
+:where(a:not(.button-style).icon-end) {
+  flex-direction: row;
+}
+/* focus-visible settings for buttons */
+/* with possibility to override them in the root css file specificly for buttons */
+:where(
+.button-style,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"]):focus-visible {
+  outline-offset: var(--btn-focus-visible__outline-offset, var(--root-focus-visible__outline-offset));
+  outline-color: var(--btn-focus-visible__outline-color, var(--root-focus-visible__outline-color));
+  outline-style: var(--btn-focus-visible__outline-style, var(--root-focus-visible__outline-style));
+  outline-width: var(--btn-focus-visible__outline-width, var(--root-focus-visible__outline-width));
+}
+:where(
+.button-style,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]),
+:where(input[type="file"])::file-selector-button {
+  font: inherit;
+  font-size: var(--btn__font-size, inherit);
+  font-family: var(--btn__font-family, inherit);
+  font-weight: var(--btn__font-weight, inherit);
+  line-height: 1;
+  letter-spacing: inherit;
+  border-radius: var(--btn__border-radius, none);
+  cursor: pointer;
+  background: var(--btn__bg-color, #efefef);
+  color: var(--btn__color, currentColor);
+  border-width: var(--btn__border-width, 2px);
+  border-style: var(--btn__border-style, solid);
+  border-color: var(--btn__border-color, grey);
+  display: inline-flex;
+  justify-content: center;
+  gap: 0.4ch;
+  text-align: center;
+  padding-inline: 1em;
+  padding-block: 0.7em;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  min-width: 9ch;
+  text-decoration: none;
+  vertical-align: middle;
+  appearance: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  :where(
+  .button-style,
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"]) {
+    transition: var(--btn__transition);
+  }
+}
+:where(
+.button-style:not([disabled]),
+button:not([disabled]),
+input[type="button"]:not([disabled]),
+input[type="submit"]:not([disabled]),
+input[type="reset"]:not([disabled])
+):where(:not(:active):hover) {
+  --btn__bg-color: var(--btn-hover__bg-color, transparent);
+  --btn__color: var(--btn-hover__color);
+  --btn__border-color: var(--btn-hover__border-color);
+}
+:where(
+.button-style,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]
+)[disabled] {
+  opacity: .5;
+  cursor: not-allowed;
+}
+:where(input[type="file"]) {
+  font: inherit;
+  inline-size: 100%;
+  max-inline-size: max-content;
+}
+:where(input[type="button"]),
+:where(input[type="file"])::file-selector-button {
+  appearance: none;
+}
+:where(input[type="file"])::file-selector-button {
+  margin-inline-end: 1.5ch;
+}
+:where(
+.button-style,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]
+) :where(svg) {
+  height: 1em;
+  width: 1em;
+  fill: currentcolor;
+}
+:where(
+.button-style,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]
+):where(.btn-w100) {
+  width: 100%;
+}
+:where(
+.button-style,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]
+):where(.btn-w100 + .btn-w100) {
+  margin-block-start: 0.5rem;
+}
+/* Buttons Helpers */
+/* [ icon-start] or [ icon-end ] */
+/* buttons with icons to the left[start] or right[end] */
+/* links with icons to the left[start] or right[end] */
+:where(
+.button-style,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"]).icon-start {
+  flex-direction: row;
+}
+:where(
+.button-style,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"]).icon-end {
+  flex-direction: row-reverse;
+}
+:where(abbr[title]) {
+  cursor: help;
+}
+:where(code,
+kbd, small) {
+  font-family: var(--root-mono__font-family, monospace);
+  font-size: smaller;
+}
+:where(code) {
+  padding: 0.2em 0.4em;
+  color: var(--code__color, currentColor);
+  background-color: var(--code__bg-color, initial);
+  border-radius: 6px;
+  word-wrap: break-word;
+}
+/* Override user agent default margins */
+/* Set it to 0 for a better styling control */
+:where(body) {
+  margin: 0;
+}
+:where(
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd,
+  pre,
+  ul,
+  ol
+) {
+  margin-block: 0;
+  margin-inline: 0;
+}
+:where(address) {
+  font-style: inherit;
+}
+/* horizontal rule element */
+:where(hr) {
+  height: 0.1em;
+  background-color: var(--hr__bg-color, gray);
+  border: none;
+}
+:where(pre) {
+  overflow: auto;
+  font-size: smaller;
+  padding: 1em;
+  line-height: 1.45;
+  color: var(--pre__color, currentColor);
+  background-color: var(--pre__bg-color, initial);
+  border-radius: 6px;
+  font-family: var(--root-mono__font-family, monospace);
+}
+:where(pre code) {
+  font-size: inherit;
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
+  word-break: normal;
+}
+/* Details element */
+:where(summary) {
+  cursor: pointer;
+}
+/* Description list */
+:where(dt) {
+/* Description term bold */
+  font-weight: 700;
+}
+:where(dt~dd) {
+  margin-inline-start: 1.5ch;
+}
+:where(dd+dt) {
+  margin-block-start: .5em;
+}
+:where(blockquote) {
+  padding-inline: 0.8em;
+  margin-inline: 1em;
+  color: var(--blockquote__color, currentColor);
+}
+:where(caption, figcaption) {
+  font-size: smaller;
+  color: var(--caption__color, currentColor);
+}
+:where(ol, ul) {
+  padding-inline-start: 2rem;
+}
+/* remove list style from ul and ol inside nav tag */
+:where(nav ul, nav ol) {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-block: 0;
+  margin-inline: 0;
+  padding-inline-start: 0;
+  gap: 0 1ch;
+}
+/* Lists Helpers */
+/* [ nav-vertical] */
+/* horizontal or vertical navigation list */
+:where(nav.nav-vertical ul) {
+  flex-direction: column;
+}
+:where(dialog) {
+  border-color: grey;
+  background-color: var(--root__bg-color);
+}
+:where(table) {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+:where(table, th, td) {
+  padding: 0.3em 0.5em;
+  border-width: var(--table__border-width, 1px);
+  border-style: var(--table__border-style);
+  border-color: var(--table__border-color, grey);
+}
+/* focus-visible settings for inputs */
+/* with possibility to override them in the root css file specificly for inputs */
+:where(
+  input:not([type="button"],[type="submit"],[type="reset"],[type="file"]),
+  textarea,
+  select
+):focus-visible {
+  outline-offset: var(--input-focus-visible__outline-offset, var(--root-focus-visible__outline-offset));
+  outline-color: var(--input-focus-visible__outline-color, var(--root-focus-visible__outline-color));
+  outline-style: var(--input-focus-visible__outline-style, var(--root-focus-visible__outline-style));
+  outline-width: var(--input-focus-visible__outline-width, var(--root-focus-visible__outline-width));
+}
+:where(
+  input:not([type="button"],[type="submit"],[type="reset"],[type="file"]),
+  textarea,
+  select
+) {
+  font: inherit;
+  font-size: var(--input__font-size, inherit);
+  font-family: var(--input__font-family, inherit);
+  font-weight: var(--input__font-weight, inherit);
+  padding: 0.25rem 0.7rem;
+  border-width: var(--input__border-width, 1px);
+  border-style: var(--input__border-style, solid);
+  border-color: var(--input__border-color, grey);
+  color: var(--input__color, currentColor);
+  border-radius: var(--input__border-radius, initial);
+  background-color: var(--input__bg-color, initial);
+}
+:where(input[type="checkbox"], input[type="radio"]) {
+  margin: 0;
+}
+:where(input[type="color"]) {
+  padding: 0;
+}
+:where(input[type="range"]) {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+:where(
+  input:not([type="button"],[type="submit"],[type="reset"],[type="file"]),
+  textarea,
+  select
+)[disabled],
+:where(fieldset[disabled])
+:where(
+  input:not([type="button"],[type="submit"],[type="reset"],[type="file"]),
+  textarea,
+  select
+) {
+  opacity: .4;
+  background-color: var(--input-disabled__bg-color, #efefef);
+}
+:where(fieldset) {
+  padding-block: 0;
+  padding-inline: 0;
+  margin-inline: 0;
+  border: 0;
+}
+:where(legend) {
+  padding-inline: 0;
+}
+:where(label) {
+  display: inline-block;
+  color: var(--label__color, currentColor);
+  font-size: var(--label__font-size, inherit);
+  font-family: var(--label__font-family, inherit);
+  font-weight: var(--label__font-weight, inherit);
+}
+/* safari datetime input fix */
+:where(input::-webkit-datetime-edit) {
+  display: block;
+}
+/* responsive image */
+:where(img, picture) {
+  /* responsive image */
+  max-width: 100%;
+  height: auto;
+  /* to remove the extra space below the image */
+  display: block;
+}
+/* remove default border from iframe */
+:where(iframe) {
+  border: 0;
+}

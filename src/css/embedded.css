@@ -1,0 +1,14 @@
+/* responsive image */
+:where(img, picture) {
+  /* responsive image */
+  max-width: 100%;
+  height: auto;
+  /* to remove the extra space below the image */
+  display: block;
+}
+
+/* remove default border from iframe */
+:where(iframe) {
+  border: 0;
+}
+

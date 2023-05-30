@@ -1,0 +1,123 @@
+:where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+) {
+  /* Override user agent default margins */
+  /* Set it to 0 for a better styling control */
+  margin-block: 0;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto; /* for Safari */
+  hyphens: auto;
+  /* experimental text-wrap: balance for large headings */
+  text-wrap: balance;
+
+}
+
+/* line-height adjustments for additional headings */
+:where(.text-style10, .text-style9) {
+  line-height: 1;
+}
+
+:where(.text-style8,.text-style7) {
+  line-height: 1.1;
+}
+
+:where(
+  .text-style10,
+  .text-style9,
+  .text-style8,
+  .text-style7
+  .text-style6,
+  .text-style5,
+  .text-style4,
+  .text-style3,
+  .text-style2,
+  .text-style1,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+) {
+  font-family: var(--heading__font-family, var(--root__font-family));
+  font-weight: var(--heading__font-weight, 700);
+  color: var(--heading__color, currentColor);
+}
+
+/* additional styles for headings fot bigger headings (7-10) */
+.text-style10 {
+  --heading__font-family: var(--text-style10__font-family);
+  --heading__font-weight: var(--text-style10__font-weight);
+  --heading__color: var(--text-style10__color);
+  font-size: var(--text-style10__font-size, 5.16rem);
+}
+
+.text-style9 {
+  --heading__font-family: var(--text-style9__font-family);
+  --heading__font-weight: var(--text-style9__font-weight);
+  --heading__color: var(--text-style9__color);
+  font-size: var(--text-style9__font-size, 4.3rem);
+}
+
+.text-style8 {
+  --heading__font-family: var(--text-style8__font-family);
+  --heading__font-weight: var(--text-style8__font-weight);
+  --heading__color: var(--text-style8__color);
+  font-size: var(--text-style8__font-size, 3.583rem);
+}
+
+.text-style7 {
+  --heading__font-family: var(--text-style7__font-family);
+  --heading__font-weight: var(--text-style7__font-weight);
+  --heading__color: var(--text-style7__color);
+  font-size: var(--text-style7__font-size, 2.986rem);
+}
+
+/* default headings */
+:where(h1), .text-style6 {
+  --heading__font-family: var(--text-style6__font-family);
+  --heading__font-weight: var(--text-style6__font-weight);
+  --heading__color: var(--text-style6__color);
+  font-size: var(--text-style6__font-size, 2.488rem);
+}
+
+:where(h2), .text-style5 {
+  --heading__font-family: var(--text-style5__font-family);
+  --heading__font-weight: var(--text-style5__font-weight);
+  --heading__color: var(--text-style5__color);
+  font-size: var(--text-style5__font-size, 2.074rem);
+}
+
+:where(h3), .text-style4 {
+  --heading__font-family: var(--text-style4__font-family);
+  --heading__font-weight: var(--text-style4__font-weight);
+  --heading__color: var(--text-style4__color);
+  font-size: var(--text-style4__font-size, 1.728rem);
+}
+
+:where(h4), .text-style3 {
+  --heading__font-family: var(--text-style3__font-family);
+  --heading__font-weight: var(--text-style3__font-weight);
+  --heading__color: var(--text-style3__color);
+  font-size: var(--text-style3__font-size, 1.44rem);
+}
+
+:where(h5), .text-style2 {
+  --heading__font-family: var(--text-style2__font-family);
+  --heading__font-weight: var(--text-style2__font-weight);
+  --heading__color: var(--text-style2__color);
+  font-size: var(--text-style2__font-size, 1.2rem);
+}
+
+:where(h6), .text-style1 {
+  --heading__font-family: var(--text-style1__font-family);
+  --heading__font-weight: var(--text-style1__font-weight);
+  --heading__color: var(--text-style1__color);
+  font-size: var(--text-style1__font-size, 1rem);
+}

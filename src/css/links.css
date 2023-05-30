@@ -1,0 +1,62 @@
+/* focus-visible settings for links */
+/* with possibility to override them in the root css file specificly for links */
+:where(a:not(.button-style)):focus-visible {
+  outline-offset: var(--link-focus-visible__outline-offset, var(--root-focus-visible__outline-offset));
+  outline-color: var(--link-focus-visible__outline-color, var(--root-focus-visible__outline-color));
+  outline-style: var(--link-focus-visible__outline-style, var(--root-focus-visible__outline-style));
+  outline-width: var(--link-focus-visible__outline-width, var(--root-focus-visible__outline-width));
+}
+
+:where(a:not(.button-style)) {
+  display: inline-flex;
+  gap: 0.3ch;
+  align-items: baseline;
+  font-size: var(--link__font-size, inherit);
+  font-family: var(--link__font-family, inherit);
+  font-weight: var(--link__font-weight, inherit);
+  color: var(--link__color, #0052c0);
+  text-underline-offset: var(--link__text-underline-offset, auto);
+  text-decoration-line: var(--link__text-decoration-line, underline);
+  text-decoration-thickness: var(--link__text-decoration-thickness, auto);
+  text-decoration-style: var(--link__text-decoration-style, solid);
+  text-decoration-color: var(--link__text-decoration-color, currentColor);
+}
+
+:where(a:not(.button-style):visited) {
+  color: var(--link-visited__color, #551a8b);
+}
+
+:where(a:not(.button-style):hover) {
+  --link__color: var(--link-hover__color, currentColor);
+  --link-visited__color: var(--link-hover__color, currentColor);
+  --link__text-underline-offset: var(--link-hover__text-underline-offset, auto);
+  --link__text-decoration-line: var(--link-hover__text-decoration-line, underline);
+  --link__text-decoration-thickness: var(--link-hover__text-decoration-thickness, auto);
+  --link__text-decoration-style: var(--link-hover__text-decoration-style, solid);
+  --link__text-decoration-color: var(--link-hover__text-decoration-color, currentColor);
+}
+
+/* remove link styles from <a> without href attribute and class */
+:where(a:not([href]):not([class]), a:not([href]):not([class]):hover) {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(a:not(.button-style) > svg) {
+  height: 1em;
+  width: 1em;
+  fill: currentcolor;
+  /* transform: translateY(1px); */
+  align-self: center;
+  flex-shrink: 0;
+}
+
+/* Link Helpers */
+/* [ icon-start ] or [ icon-end ] */
+/* links with icons to the left[start] or right[end] */
+:where(a:not(.button-style).icon-start) {
+  flex-direction: row-reverse;
+}
+:where(a:not(.button-style).icon-end) {
+  flex-direction: row;
+}

@@ -1,0 +1,217 @@
+:root {
+  /* ============ */
+  /* global styles */
+  /* ============ */
+  /* ----- global focus-visible settings ----- */
+  --root-focus-visible__outline-color: rgb(37, 109, 210);
+  /* --root-focus-visible__outline-offset:; */
+  --root-focus-visible__outline-width: .2ex;
+  --root-focus-visible__outline-style: solid;
+
+  /* ----- selection styles ----- */
+  --root-selection__color: currentColor;
+  --root-selection__bg-color: rgb(38 77 133 / 30%);
+
+  /* ----- color scheme ----- */
+  --root__color-scheme: light;
+
+  /* ----- accent color ----- */
+  /* --root__accent-color:; */
+
+  /* ----- enable global smooth scroll behaviour ----- */
+  --root__scroll-behavior: smooth;
+
+  /* --root__bg-color:; */
+  /* --root__color:; */
+  --root__font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  --root-mono__font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  --root__line-height: 1.6;
+  --root__font-size: 18px;
+
+
+
+  /* ============ */
+    /* links */
+  /* ============ */
+  /* --link__font-weight:; */
+  /* --link__font-family:; */
+  /* --link__font-size:; */
+  /* --link-visited__color:; */
+  --link__color: #0059a3;
+  --link__text-underline-offset: .3ex;
+  /* --link__text-decoration-line:; */
+  --link__text-decoration-thickness: .2ex;
+  /* --link__text-decoration-style:; */
+  /* --link__text-decoration-color:; */
+  --link-hover__color: #00607e;
+  --link-hover__text-underline-offset: .2ex;
+  /* --link-hover__text-decoration-line:; */
+  --link-hover__text-decoration-thickness: .3ex;
+  /* --link-hover__text-decoration-style:; */
+  /* --link-hover__text-decoration-color:; */
+
+  /* ----- focus-visible settings for buttons ----- */
+  --link-focus-visible__outline-offset: 3px;
+  /* --link-focus-visible__outline-color:; */
+  --link-focus-visible__outline-style: solid;
+  --link-focus-visible__outline-width: .3ex;
+
+
+
+  /* ============ */
+  /* Buttons */
+  /* ============ */
+  --btn__font-weight: 700;
+  /* --btn__font-family:; */
+  /* --btn__font-size:; */
+  --btn__color: #000;
+  --btn__bg-color: #FF8B69;
+  --btn__border-width: 1px;
+  /* --btn__border-style:; */
+  --btn__border-color: #c45400;
+  --btn__border-radius: 6px;
+  --btn-hover__color: #000;
+  --btn-hover__bg-color: #e66b4c;
+  --btn-hover__border-color: #c45400;
+  --btn__transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+
+  /* ----- focus-visible settings for buttons ----- */
+  --btn-focus-visible__outline-offset: 2px;
+  /* --btn-focus-visible__outline-color:; */
+  --btn-focus-visible__outline-style: solid;
+  --btn-focus-visible__outline-width: .5ex;
+
+
+
+  /* ============ */
+  /* Form */
+  /* ============ */
+  --input__font-weight:;
+  --input__font-family:;
+  --input__font-size:;
+  /* --input__color:; */
+  /* --input__bg-color:; */
+  --input__border-width: 2px;
+  /* --input__border-style:; */
+  --input__border-color: #afb8c1;
+  --input__border-radius: 6px;
+
+  /* ----- focus-visible settings for form inputs ----- */
+  --input-focus-visible__outline-offset:1px;
+  --input-focus-visible__outline-color: #d24500;
+  /* --input-focus-visible__outline-style:; */
+  --input-focus-visible__outline-width: 2px;
+
+
+
+  /* ============ */
+  /* inline-elements */
+  /* ============ */
+  /* --code__color:; */
+  --code__bg-color: #afb8c133;
+
+
+  /* ============ */
+  /* block-elements */
+  /* ============ */
+  /* --pre__color:; */
+  --pre__bg-color: #afb8c133;
+  --hr__bg-color: #57585a;
+  /* --blockquote__color:; */
+  --caption__color: #57585a;
+  /* ============ */
+  /* ============ */
+
+
+
+  /* ============ */
+  /* table */
+  /* ============ */
+  /* --table__border-color:; */
+  /* --table__border-width:; */
+  --table__border-style: solid;
+
+
+
+  /* ============ */
+  /* headings */
+  /* ============ */
+  /* Common Typographic Scale Ratios:
+    1.067 — Minor Second
+    1.125 — Major Second
+    1.200 — Minor Third
+    1.250 — Major Third
+    1.333 — Perfect Fourth
+    1.414 — Augmented Fourth
+    1.500 — Perfect Fifth
+    1.618 — The Golden Ratio
+  */
+  /* ----- all headings style ----- */
+  /* --heading__font-family:; */
+  /* --heading__font-weight:; */
+  /* --heading__color:; */
+
+  /* 12 headings styles separatly */
+  /* ----- fluid type --- https://utopia.fyi/ ----- */
+  /* --text-style10__font-size: clamp(2.87rem, calc(2.38rem + 2.43vw), 4.51rem);
+  --text-style9__font-size: clamp(2.49rem, calc(2.08rem + 2.06vw), 3.89rem);
+  --text-style8__font-size: clamp(2.17rem, calc(1.82rem + 1.75vw), 3.35rem);
+  --text-style7__font-size: clamp(2.17rem, calc(1.82rem + 1.75vw), 3.35rem);
+  --text-style6__font-size: clamp(2.49rem, calc(2.40rem + 0.46vw), 2.80rem);
+  --text-style5__font-size: clamp(2.07rem, calc(2.00rem + 0.38vw), 2.33rem);
+  --text-style4__font-size: clamp(1.73rem, calc(1.66rem + 0.32vw), 1.94rem);
+  --text-style3__font-size: clamp(1.44rem, calc(1.39rem + 0.27vw), 1.62rem);
+  --text-style2__font-size: clamp(1.20rem, calc(1.16rem + 0.22vw), 1.35rem);
+  --text-style1__font-size: clamp(1.00rem, calc(0.96rem + 0.19vw), 1.13rem); */
+  /* --text-style10__font-family:; */
+  /* --text-style9__font-family:; */
+  /* --text-style8__font-family:; */
+  /* --text-style7__font-family:; */
+  /* --text-style6__font-family:; */
+  /* --text-style5__font-family:; */
+  /* --text-style4__font-family:; */
+  /* --text-style3__font-family:; */
+  /* --text-style2__font-family:; */
+  /* --text-style1__font-family:; */
+  /* --text-style10__font-weight:; */
+  /* --text-style9__font-weight:; */
+  /* --text-style8__font-weight:; */
+  /* --text-style7__font-weight:; */
+  /* --text-style6__font-weight:; */
+  /* --text-style5__font-weight:; */
+  /* --text-style4__font-weight:; */
+  /* --text-style3__font-weight:; */
+  /* --text-style2__font-weight:; */
+  /* --text-style1__font-weight:; */
+  /* --text-style10__color:; */
+  /* --text-style9__color:; */
+  /* --text-style8__color:; */
+  /* --text-style7__color:; */
+  /* --text-style6__color:; */
+  /* --text-style5__color:; */
+  /* --text-style4__color:; */
+  /* --text-style3__color:; */
+  /* --text-style2__color:; */
+  /* --text-style1__color:; */
+}
+
+
+
+
+  /* initial web safe fonts */
+  /* --initial__font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"; */
+  /* --initial-mono__font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; */
+  /* system fonts by default */
+  /* font-family: var(--root__font-family, var(--initial__font-family)); */
+
+
+/* -apple-system,Arial,BlinkMacSystemFont,Roboto Slab,Droid Serif,Segoe UI,Ubuntu,Cantarell,sans-serif */
+/* -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji" */
+
+/* BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif */
+
+
+/* BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif */
+
+
+/* -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji" */

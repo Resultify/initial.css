@@ -1,0 +1,83 @@
+/* focus-visible settings for inputs */
+/* with possibility to override them in the root css file specificly for inputs */
+:where(
+  input:not([type="button"],[type="submit"],[type="reset"],[type="file"]),
+  textarea,
+  select
+):focus-visible {
+  outline-offset: var(--input-focus-visible__outline-offset, var(--root-focus-visible__outline-offset));
+  outline-color: var(--input-focus-visible__outline-color, var(--root-focus-visible__outline-color));
+  outline-style: var(--input-focus-visible__outline-style, var(--root-focus-visible__outline-style));
+  outline-width: var(--input-focus-visible__outline-width, var(--root-focus-visible__outline-width));
+}
+
+:where(
+  input:not([type="button"],[type="submit"],[type="reset"],[type="file"]),
+  textarea,
+  select
+) {
+  font: inherit;
+  font-size: var(--input__font-size, inherit);
+  font-family: var(--input__font-family, inherit);
+  font-weight: var(--input__font-weight, inherit);
+  padding: 0.25rem 0.7rem;
+  border-width: var(--input__border-width, 1px);
+  border-style: var(--input__border-style, solid);
+  border-color: var(--input__border-color, grey);
+  color: var(--input__color, currentColor);
+  border-radius: var(--input__border-radius, initial);
+  background-color: var(--input__bg-color, initial);
+}
+
+:where(input[type="checkbox"], input[type="radio"]) {
+  margin: 0;
+}
+
+:where(input[type="color"]) {
+  padding: 0;
+}
+
+:where(input[type="range"]) {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+:where(
+  input:not([type="button"],[type="submit"],[type="reset"],[type="file"]),
+  textarea,
+  select
+)[disabled],
+:where(fieldset[disabled])
+:where(
+  input:not([type="button"],[type="submit"],[type="reset"],[type="file"]),
+  textarea,
+  select
+) {
+  opacity: .4;
+  background-color: var(--input-disabled__bg-color, #efefef);
+}
+
+:where(fieldset) {
+  padding-block: 0;
+  padding-inline: 0;
+  margin-inline: 0;
+  border: 0;
+}
+
+:where(legend) {
+  padding-inline: 0;
+}
+
+:where(label) {
+  display: inline-block;
+  color: var(--label__color, currentColor);
+  font-size: var(--label__font-size, inherit);
+  font-family: var(--label__font-family, inherit);
+  font-weight: var(--label__font-weight, inherit);
+}
+
+/* safari datetime input fix */
+:where(input::-webkit-datetime-edit) {
+  display: block;
+}

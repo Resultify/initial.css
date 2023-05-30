@@ -1,0 +1,11 @@
+:where(table) {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:where(table, th, td) {
+  padding: 0.3em 0.5em;
+  border-width: var(--table__border-width, 1px);
+  border-style: var(--table__border-style);
+  border-color: var(--table__border-color, grey);
+}

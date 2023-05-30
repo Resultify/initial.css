@@ -1,0 +1,75 @@
+/* border-box box model for all html elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* boost font sizes on small screens on some smartphones and tablets */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
+  /*
+    inherit browsers font size which depends on browsers settings,
+    by default it is 16px
+  */
+  font-size: var(--root__font-size, inherit); /* default = 16px */
+
+  /* same line-height for all browsers */
+  line-height: var(--root__line-height, 1.5); /* default = 1.2 */
+
+  /* sans-serif font by default */
+  font-family: var(--root__font-family, sans-serif);
+
+  /* use default browser background-color rgba(0, 0, 0, 0) = transparent */
+  background-color: var(--root__bg-color, inherit);
+
+  /* use default browser color "CanvasText" = rgb(0, 0, 0) */
+  color: var(--root__color, initial);
+
+  /*
+    browser emphasizes rendering speed
+    over legibility and geometric precision when drawing text.
+    It disables kerning and ligatures.
+  */
+  text-rendering: optimizeSpeed;
+
+  /*
+    color for user-interface controls
+    checkbox, radio, range, progress
+  */
+  accent-color: var(--root__accent-color, auto);
+  /*
+    browser with OS will try to modify some controls
+    (canvas color, form controls, scrollbars, etc.)
+    based on color schema settings
+  */
+  color-scheme: var(--root__color-scheme, normal);
+}
+
+/* set smooth scrolling only if the user prefers it */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: var(--root__scroll-behavior, auto);
+  }
+}
+
+/* default focus outline */
+/* by default similar to webkit default focus outline */
+:where(:focus-visible) {
+  outline-offset: var(--root-focus-visible__outline-offset, 0);
+  outline-color: var(--root-focus-visible__outline-color, #842685b3);
+  outline-style: var(--root-focus-visible__outline-style, auto);
+  outline-width: var(--root-focus-visible__outline-width, .2ex);
+}
+
+/* text section style */
+::selection {
+  background-color: var(--root-selection__bg-color, #8426854d);
+  color: var(--root-selection__color, curentColor);
+}
+
+[hidden] {
+  display: none !important;
+}

@@ -1,0 +1,106 @@
+/* Override user agent default margins */
+/* Set it to 0 for a better styling control */
+:where(body) {
+  margin: 0;
+}
+
+:where(
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd,
+  pre,
+  ul,
+  ol
+) {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+:where(address) {
+  font-style: inherit;
+}
+
+/* horizontal rule element */
+:where(hr) {
+  height: 0.1em;
+  background-color: var(--hr__bg-color, gray);
+  border: none;
+}
+
+:where(pre) {
+  overflow: auto;
+  font-size: smaller;
+  padding: 1em;
+  line-height: 1.45;
+  color: var(--pre__color, currentColor);
+  background-color: var(--pre__bg-color, initial);
+  border-radius: 6px;
+  font-family: var(--root-mono__font-family, monospace);
+}
+
+:where(pre code) {
+  font-size: inherit;
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
+  word-break: normal;
+}
+
+/* Details element */
+:where(summary) {
+  cursor: pointer;
+}
+
+/* Description list */
+:where(dt) {
+/* Description term bold */
+  font-weight: 700;
+}
+
+:where(dt~dd) {
+  margin-inline-start: 1.5ch;
+}
+
+:where(dd+dt) {
+  margin-block-start: .5em;
+}
+
+:where(blockquote) {
+  padding-inline: 0.8em;
+  margin-inline: 1em;
+  color: var(--blockquote__color, currentColor);
+}
+
+:where(caption, figcaption) {
+  font-size: smaller;
+  color: var(--caption__color, currentColor);
+}
+
+:where(ol, ul) {
+  padding-inline-start: 2rem;
+}
+
+/* remove list style from ul and ol inside nav tag */
+:where(nav ul, nav ol) {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-block: 0;
+  margin-inline: 0;
+  padding-inline-start: 0;
+  gap: 0 1ch;
+}
+
+/* Lists Helpers */
+/* [ nav-vertical] */
+/* horizontal or vertical navigation list */
+:where(nav.nav-vertical ul) {
+  flex-direction: column;
+}
+
+:where(dialog) {
+  border-color: grey;
+  background-color: var(--root__bg-color);
+}
