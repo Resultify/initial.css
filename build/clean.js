@@ -1,6 +1,5 @@
 import { deleteAsync } from 'del'
 import { globals } from './globals.js'
-import fsPromises from 'fs/promises'
 
 /**
  * @summary Clean the dist folder
@@ -18,19 +17,18 @@ async function cleanDist () {
 }
 
 /**
- * @summary Clean the tmp folder
+ * @summary Clean all css files in the demo folder
  * @async
  * @returns undefined
  */
-async function cleanTmp () {
+async function cleanDemoCss () {
   try {
-    await fsPromises.mkdir(globals.TMP, { recursive: true })
     if (globals.ROOT_DIR_NAME === 'initial-css') {
-      await deleteAsync([`${globals.TMP}/**/*`])
+      await deleteAsync([`${globals.DEMO}/**/*.css`])
     }
   } catch (error) {
     console.error(error)
   }
 }
 
-export { cleanDist, cleanTmp }
+export { cleanDemoCss, cleanDist }

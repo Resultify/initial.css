@@ -6,7 +6,7 @@
  * @property {string|undefined} ROOT_DIR_NAME
  * @property {string} SRC
  * @property {string} DIST
- * @property {string} TMP
+ * @property {string} DEMO
  */
 
 /**
@@ -19,7 +19,7 @@ globals.ROOT_PATH = process.cwd()
 globals.ROOT_DIR_NAME = globals.ROOT_PATH.split('/').pop()
 
 globals.SRC = `${globals.ROOT_PATH}/src`
-globals.TMP = `${globals.ROOT_PATH}/.tmp`
+globals.DEMO = `${globals.ROOT_PATH}/demo`
 globals.DIST = `${globals.ROOT_PATH}/dist`
 
 export { globals }

@@ -1,7 +1,6 @@
 import { checkNode } from './check.js'
-import { cleanDist, cleanTmp } from './clean.js'
-import { copyFiles, copyHtml, copyAll } from './copy.js'
-import { compileCss } from './css.js'
+import { cleanDist } from './clean.js'
+import { compileCss, compileMinCss } from './css.js'
 checkNode()
 
 /**
@@ -10,12 +9,10 @@ checkNode()
  * @returns undefined
  */
 async function build () {
-  await cleanTmp()
-  await copyFiles()
-  await copyHtml()
-  await compileCss()
   await cleanDist()
-  await copyAll()
+  await compileCss()
+  await compileCss(true)
+  await compileMinCss()
 }
 
 export { build }
