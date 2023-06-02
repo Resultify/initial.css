@@ -17,6 +17,7 @@
   select
 ) {
   font: inherit;
+  min-width: 10ch;
   font-size: var(--input__font-size, inherit);
   font-family: var(--input__font-family, inherit);
   font-weight: var(--input__font-weight, inherit);
@@ -31,10 +32,12 @@
 
 :where(input[type="checkbox"], input[type="radio"]) {
   margin: 0;
+  min-width: 0;
 }
 
 :where(input[type="color"]) {
   padding: 0;
+  min-width: 0;
 }
 
 :where(input[type="range"]) {

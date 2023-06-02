@@ -381,7 +381,7 @@ input[type="file"]).icon-end {
   cursor: help;
 }
 :where(code,
-kbd, small) {
+kbd) {
   font-family: var(--root-mono__font-family, monospace);
   font-size: smaller;
 }
@@ -511,6 +511,7 @@ kbd, small) {
   select
 ) {
   font: inherit;
+  min-width: 10ch;
   font-size: var(--input__font-size, inherit);
   font-family: var(--input__font-family, inherit);
   font-weight: var(--input__font-weight, inherit);
@@ -524,9 +525,11 @@ kbd, small) {
 }
 :where(input[type="checkbox"], input[type="radio"]) {
   margin: 0;
+  min-width: 0;
 }
 :where(input[type="color"]) {
   padding: 0;
+  min-width: 0;
 }
 :where(input[type="range"]) {
   padding: 0;
