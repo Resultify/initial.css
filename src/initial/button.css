@@ -1,7 +1,7 @@
 /* focus-visible settings for buttons */
 /* with possibility to override them in the root css file specificly for buttons */
 :where(
-.button-style,
+.button,
 button,
 input[type="button"],
 input[type="submit"],
@@ -14,7 +14,7 @@ input[type="file"]):focus-visible {
 }
 
 :where(
-.button-style,
+.button,
 button,
 input[type="button"],
 input[type="submit"],
@@ -28,7 +28,7 @@ input[type="reset"]),
   letter-spacing: inherit;
   border-radius: var(--btn__border-radius, none);
   cursor: pointer;
-  background: var(--btn__bg-color, #efefef);
+  background-color: var(--btn__bg-color, #efefef);
   color: var(--btn__color, currentColor);
   border-width: var(--btn__border-width, 2px);
   border-style: var(--btn__border-style, solid);
@@ -37,8 +37,8 @@ input[type="reset"]),
   justify-content: center;
   gap: 0.4ch;
   text-align: center;
-  padding-inline: 1em;
-  padding-block: 0.7em;
+  padding-inline: var(--btn__padding-inline, 1em);
+  padding-block: var(--btn__padding-block, 0.7em);
   user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
@@ -51,7 +51,7 @@ input[type="reset"]),
 
 @media (prefers-reduced-motion: no-preference) {
   :where(
-  .button-style,
+  .button,
   button,
   input[type="button"],
   input[type="submit"],
@@ -61,19 +61,19 @@ input[type="reset"]),
 }
 
 :where(
-.button-style:not([disabled]),
+.button:not([disabled]),
 button:not([disabled]),
 input[type="button"]:not([disabled]),
 input[type="submit"]:not([disabled]),
 input[type="reset"]:not([disabled])
 ):where(:not(:active):hover) {
-  --btn__bg-color: var(--btn-hover__bg-color, transparent);
-  --btn__color: var(--btn-hover__color);
-  --btn__border-color: var(--btn-hover__border-color);
+  background-color: var(--btn-hover__bg-color, var(--btn__bg-color, transparent));
+  color: var(--btn-hover__color, var(--btn__color));
+  border-color: var(--btn-hover__border-color, var(--btn__border-color));
 }
 
 :where(
-.button-style,
+.button,
 button,
 input[type="button"],
 input[type="submit"],
@@ -99,7 +99,7 @@ input[type="reset"]
 }
 
 :where(
-.button-style,
+.button,
 button,
 input[type="button"],
 input[type="submit"],
@@ -111,7 +111,7 @@ input[type="reset"]
 }
 
 :where(
-.button-style,
+.button,
 button,
 input[type="button"],
 input[type="submit"],
@@ -121,7 +121,7 @@ input[type="reset"]
 }
 
 :where(
-.button-style,
+.button,
 button,
 input[type="button"],
 input[type="submit"],
@@ -135,7 +135,7 @@ input[type="reset"]
 /* buttons with icons to the left[start] or right[end] */
 /* links with icons to the left[start] or right[end] */
 :where(
-.button-style,
+.button,
 button,
 input[type="button"],
 input[type="submit"],
@@ -144,7 +144,7 @@ input[type="file"]).icon-start {
   flex-direction: row;
 }
 :where(
-.button-style,
+.button,
 button,
 input[type="button"],
 input[type="submit"],

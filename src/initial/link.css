@@ -1,13 +1,13 @@
 /* focus-visible settings for links */
 /* with possibility to override them in the root css file specificly for links */
-:where(a:not(.button-style)):focus-visible {
+:where(a:not(.button)):focus-visible {
   outline-offset: var(--link-focus-visible__outline-offset, var(--root-focus-visible__outline-offset));
   outline-color: var(--link-focus-visible__outline-color, var(--root-focus-visible__outline-color));
   outline-style: var(--link-focus-visible__outline-style, var(--root-focus-visible__outline-style));
   outline-width: var(--link-focus-visible__outline-width, var(--root-focus-visible__outline-width));
 }
 
-:where(a:not(.button-style)) {
+:where(a:not(.button)) {
   display: inline-flex;
   gap: 0.3ch;
   align-items: baseline;
@@ -22,18 +22,18 @@
   text-decoration-color: var(--link__text-decoration-color, currentColor);
 }
 
-:where(a:not(.button-style):visited) {
+:where(a:not(.button):visited) {
   color: var(--link-visited__color, #551a8b);
 }
 
-:where(a:not(.button-style):hover) {
-  --link__color: var(--link-hover__color, currentColor);
-  --link-visited__color: var(--link-hover__color, currentColor);
-  --link__text-underline-offset: var(--link-hover__text-underline-offset, auto);
-  --link__text-decoration-line: var(--link-hover__text-decoration-line, underline);
-  --link__text-decoration-thickness: var(--link-hover__text-decoration-thickness, auto);
-  --link__text-decoration-style: var(--link-hover__text-decoration-style, solid);
-  --link__text-decoration-color: var(--link-hover__text-decoration-color, currentColor);
+:where(a:not(.button):hover) {
+  color: var(--link-hover__color, var(--link__color, currentColor));
+  text-underline-offset: var(--link-hover__text-underline-offset, var(--link__text-underline-offset, auto));
+  text-decoration-line: var(--link-hover__text-decoration-line, var(--link__text-decoration-line, underline));
+  text-decoration-thickness: var(--link-hover__text-decoration-thickness, var(--link__text-decoration-thickness, auto));
+  text-decoration-style: var(--link-hover__text-decoration-style, var(--link__text-decoration-style, solid));
+  text-decoration-color: var(--link-hover__text-decoration-color, var(--link__text-decoration-color, currentColor));
+  /* --link-visited__color: var(--link-hover__color, currentColor); */
 }
 
 /* remove link styles from <a> without href attribute and class */
@@ -42,7 +42,7 @@
   text-decoration: none;
 }
 
-:where(a:not(.button-style) > svg) {
+:where(a:not(.button) > svg) {
   height: 1em;
   width: 1em;
   fill: currentcolor;
@@ -54,9 +54,9 @@
 /* Link Helpers */
 /* [ icon-start ] or [ icon-end ] */
 /* links with icons to the left[start] or right[end] */
-:where(a:not(.button-style).icon-start) {
+:where(a:not(.button).icon-start) {
   flex-direction: row-reverse;
 }
-:where(a:not(.button-style).icon-end) {
+:where(a:not(.button).icon-end) {
   flex-direction: row;
 }
