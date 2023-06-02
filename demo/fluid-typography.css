@@ -1,0 +1,69 @@
+/* fluid headings */
+/* fluid type --- https://utopia.fyi/ */
+/* https://utopia.fyi/blog/clamp */
+/*
+  properties witn two underscores is internal
+  and used only for calculations not for actual use
+  --__var-bla-bla
+*/
+/* Common Typographic Scale Ratios:
+  1.067 — Minor Second
+  1.125 — Major Second
+  1.200 — Minor Third
+  1.250 — Major Third
+  1.333 — Perfect Fourth
+  1.414 — Augmented Fourth
+  1.500 — Perfect Fifth
+  1.618 — The Golden Ratio
+  custom — Custom Ratio
+*/
+:root {
+  --heading-scale-ratio: 1.2;
+
+
+  --size10: (var(--heading-scale-ratio) * var(--size9));
+  --size9: (var(--heading-scale-ratio) * var(--size8));
+  --size8: (var(--heading-scale-ratio) * var(--size7));
+  --size7: (var(--heading-scale-ratio) * var(--size6));
+  --size6: (var(--heading-scale-ratio) * var(--size5));
+  --size5: (var(--heading-scale-ratio) * var(--size4));
+  --size4: (var(--heading-scale-ratio) * var(--size3));
+  --size3: (var(--heading-scale-ratio) * var(--size2));
+  --size2: (var(--heading-scale-ratio) * var(--size1));
+  --size1: 1;
+  --max-width: 1440;
+  --min-width: 320;
+
+/* 1440px in REM */
+  --f-max-w: (1440/16);
+  /* 320px in REM */
+  --f-min-w: (320/16);
+  /* Precalcuation for the -MinWidth we need */
+  --f-minus: (-1 * var(--f-min-w));
+  /* Precalculation for the (MaxWidth - MinWidth) we need */
+  --f-w: (var(--f-max-w) - var(--f-min-w));
+
+  /* Per step size */
+  /* Min font size */
+  --f-0-min: (16/16);
+  /* Max font size */
+  --f-0-max: (40/16);
+
+  --f-0-slope: (var(--f-0-max) - var(--f-0-min)) / (var(--f-max-w) - var(--f-min-w));
+  --f-0-intersection: ((-1 * var(--f-min-w)) * var(--f-slope) + var(--f-0-min));
+  --step-0: clamp(var(--f-0-min) * 1rem, var(--f-0-intersection) * 1rem + var(--f-0-slope) * 100vw, var(--f-0-max) * 1rem);
+
+
+  --text-style10__font-size: calc(var(--size10) * 1rem);
+  --text-style9__font-size: calc(var(--size9) * 1rem);
+  --text-style8__font-size: calc(var(--size8) * 1rem);
+  --text-style7__font-size: calc(var(--size7) * 1rem);
+  --text-style6__font-size: calc(var(--size6) * 1rem);
+  --text-style5__font-size: calc(var(--size5) * 1rem);
+  --text-style4__font-size: calc(var(--size4) * 1rem);
+  --text-style3__font-size: calc(var(--size3) * 1rem);
+  --text-style2__font-size: calc(var(--size2) * 1rem);
+  --text-style1__font-size: calc(var(--size1) * 1rem);
+}
+
+/*# sourceMappingURL=fluid-typography.css.map */

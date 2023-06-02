@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Headings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- css stylesheets -->
+  <link rel="stylesheet" href="initial.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="headings.css">
+
+  <!-- noindex, nofollow for search engines, but it is not guaranteed -->
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    section [class^="text-"] {
+      display: flex;
+      display: flex;
+      align-items: center;
+      gap: 0 1.5rem;
+      justify-content: flex-start;
+    }
+    section :where([class^="text-"]) span {
+      font-size: 1.2rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Headings</h1>
+    <nav aria-label="Main">
+      <ul style="font-size: 2rem;">
+        <li>
+          <a href="index.html">Initial</a>
+          <a href="theme.html">Theme</a>
+          <a href="headings.html">Headings</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <hr style="margin-block-start: 20px; margin-block-end: 20px;">
+
+  <main>
+    <form id="page-text-size">
+      <label>
+        Default page text size:
+        <input type="number" step="1" min="1" max="30" name="textSize" />
+        px
+      </label>
+    </form>
+
+    <hr style="margin-block-start: 20px; margin-block-end: 20px;">
+
+    <section id="headings-ratio">
+      <h2>Heading sizes by scale ratio</h2>
+      <form>
+        <label>
+          Set the ratio of heading sizes:
+          <input type="number" step="0.01" min="0" max="5" name="headingsRatio" />
+        </label>
+      </form>
+      <h3 class="text-style10"><span></span> Heading 10 - Nunc vitae nisi mauris.</h3>
+      <h4 class="text-style9"><span></span> Heading 9 - Pellentesque egestas eu risus eu vestibulum.</h4>
+      <h5 class="text-style8"><span></span> Heading 8 - Phasellus quis blandit lorem.</h5>
+      <h6 class="text-style7"><span></span> Heading 7 - Vivamus iaculis sagittis pretium.</h6>
+      <h1 class="text-style6"><span></span> Heading 6 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+      <h2 class="text-style5"><span></span> Heading 5 - Suspendisse tellus orci, varius a hendrerit vitae, tempus quis turpis.</h2>
+      <h3 class="text-style4"><span></span> Heading 4 - Nam at volutpat nisl pellentesque fermentum tincidunt.</h3>
+      <h4 class="text-style3"><span></span> Heading 3 - Praesent hendrerit arcu velit, vel euismod diam varius quis.</h4>
+      <h5 class="text-style2"><span></span> Heading 2 - Ut velit urna, luctus in imperdiet nec, eleifend cursus diam.</h5>
+      <h6 class="text-style1"><span></span> Heading 1 - Nam sit amet ex vitae odio pellentesque fermentum tincidunt sit amet odio.</h6>
+      <p>Paragraph - Donec sit amet metus aliquet, porttitor nisl eget, maximus urna.</p>
+    </section>
+
+    <hr style="margin-block-start: 20px; margin-block-end: 20px;">
+
+    <section id="fluid-headings">
+      <h2>Fluid Headings</h2>
+      <form>
+        <label>
+          Set the ratio of heading sizes:
+          <input type="number" step="0.01" min="0" max="5" name="headingsRatio" />
+        </label>
+      </form>
+      <h3 class="text-style10"><span></span> Heading 10 - Nunc vitae nisi mauris.</h3>
+      <h4 class="text-style9"><span></span> Heading 9 - Pellentesque egestas eu risus eu vestibulum.</h4>
+      <h5 class="text-style8"><span></span> Heading 8 - Phasellus quis blandit lorem.</h5>
+      <h6 class="text-style7"><span></span> Heading 7 - Vivamus iaculis sagittis pretium.</h6>
+      <h1 class="text-style6"><span></span> Heading 6 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+      <h2 class="text-style5"><span></span> Heading 5 - Suspendisse tellus orci, varius a hendrerit vitae, tempus quis turpis.</h2>
+      <h3 class="text-style4"><span></span> Heading 4 - Nam at volutpat nisl pellentesque fermentum tincidunt.</h3>
+      <h4 class="text-style3"><span></span> Heading 3 - Praesent hendrerit arcu velit, vel euismod diam varius quis.</h4>
+      <h5 class="text-style2"><span></span> Heading 2 - Ut velit urna, luctus in imperdiet nec, eleifend cursus diam.</h5>
+      <h6 class="text-style1"><span></span> Heading 1 - Nam sit amet ex vitae odio pellentesque fermentum tincidunt sit amet odio.</h6>
+      <p>Paragraph - Donec sit amet metus aliquet, porttitor nisl eget, maximus urna.</p>
+    </section>
+
+  </main>
+
+  <footer style="margin-block: 100px 30px;">
+    <p>Footer</p>
+  </footer>
+
+  <script src="js/headings-ratio.js"></script>
+</body>
+
+</html>

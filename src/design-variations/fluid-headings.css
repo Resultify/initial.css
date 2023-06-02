@@ -1,0 +1,131 @@
+/* Common Typographic Scale Ratios:
+  1.067 — Minor Second
+  1.125 — Major Second
+  1.200 — Minor Third
+  1.250 — Major Third
+  1.333 — Perfect Fourth
+  1.414 — Augmented Fourth
+  1.500 — Perfect Fifth
+  1.618 — The Golden Ratio
+  custom — Custom Ratio
+*/
+/*
+  properties witn two underscores is internal
+  and used only for calculations not for actual use
+  --__var-bla-bla
+*/
+#fluid-headings {
+  --heading-scale-ratio: 1.2;
+  --max-width: 1400;
+  --min-width: 320;
+
+  /* sizes based on scale ratio */
+  --__size10: (var(--heading-scale-ratio) * var(--__size9));
+  --__size9: (var(--heading-scale-ratio) * var(--__size8));
+  --__size8: (var(--heading-scale-ratio) * var(--__size7));
+  --__size7: (var(--heading-scale-ratio) * var(--__size6));
+  --__size6: (var(--heading-scale-ratio) * var(--__size5));
+  --__size5: (var(--heading-scale-ratio) * var(--__size4));
+  --__size4: (var(--heading-scale-ratio) * var(--__size3));
+  --__size3: (var(--heading-scale-ratio) * var(--__size2));
+  --__size2: (var(--heading-scale-ratio) * var(--__size1));
+  --__size1: 1;
+
+
+  /* fluid headings */
+  /* fluid type --- https://utopia.fyi/ */
+  /* https://utopia.fyi/blog/clamp */
+  /* max width in REM */
+  --__max-width: (var(--max-width)/16);
+  /* min width in REM */
+  --__min-width: (var(--min-width)/16);
+  /* Precalcuation [1] for the -min-width */
+  --__p1: (-1 * var(--__min-width));
+  /* Precalculation [2] for the (max-width - min-width) */
+  --__p2: (var(--__max-width) - var(--__min-width));
+
+
+  /* heading 10 style */
+  /* heading 10 style min size */
+  --__min10: (var(--__size7) + 0.2);
+  /* heading 10 style max size */
+  --__max10: var(--__size10);
+  --text-style10__font-size: clamp(
+    var(--__min10) * 1rem,
+    (var(--__p1) * (var(--__max10) - var(--__min10)) / var(--__p2) + var(--__min10)) * 1rem
+    +
+    (var(--__max10) - var(--__min10)) / var(--__p2) * 100vw,
+    var(--__max10) * 1rem
+  );
+
+  /* heading 9 style */
+  /* heading 9 style min size */
+  --__min9: var(--__size7);
+  /* heading 9 style max size */
+  --__max9: var(--__size9);
+  --text-style9__font-size: clamp(
+    var(--__min9) * 1rem,
+    (var(--__p1) * (var(--__max9) - var(--__min9)) / var(--__p2) + var(--__min9)) * 1rem
+    +
+    (var(--__max9) - var(--__min9)) / var(--__p2) * 100vw,
+    var(--__max9) * 1rem
+  );
+
+  /* heading 8 style */
+  /* heading 8 style min size */
+  --__min8: var(--__size6);
+  /* heading 8 style max size */
+  --__max8: var(--__size8);
+  --text-style8__font-size: clamp(
+    var(--__min8) * 1rem,
+    (var(--__p1) * (var(--__max8) - var(--__min8)) / var(--__p2) + var(--__min8)) * 1rem
+    +
+    (var(--__max8) - var(--__min8)) / var(--__p2) * 100vw,
+    var(--__max8) * 1rem
+  );
+
+  /* heading 7 style */
+  /* heading 7 style min size */
+  --__min7: var(--__size7);
+  /* heading 7 style max size */
+  --__max7: var(--__size7);
+  --text-style7__font-size: clamp(
+    var(--__min7) * 1rem,
+    (var(--__p1) * (var(--__max7) - var(--__min7)) / var(--__p2) + var(--__min7)) * 1rem
+    +
+    (var(--__max7) - var(--__min7)) / var(--__p2) * 100vw,
+    var(--__max7) * 1rem
+  );
+
+  /* heading 6 style */
+  /* heading 6 style min size */
+  --__min6: (var(--__size5) - 0.2);
+  /* heading 6 style max size */
+  --__max6: var(--__size6);
+  --text-style6__font-size: clamp(
+    var(--__min6) * 1rem,
+    (var(--__p1) * (var(--__max6) - var(--__min6)) / var(--__p2) + var(--__min6)) * 1rem
+    +
+    (var(--__max6) - var(--__min6)) / var(--__p2) * 100vw,
+    var(--__max6) * 1rem
+  );
+
+  /* heading 5 style */
+  /* heading 5 style min size */
+  --__min5: var(--__size4);
+  /* heading 5 style max size */
+  --__max5: var(--__size5);
+  --text-style5__font-size: clamp(
+    var(--__min5) * 1rem,
+    (var(--__p1) * (var(--__max5) - var(--__min5)) / var(--__p2) + var(--__min5)) * 1rem
+    +
+    (var(--__max5) - var(--__min5)) / var(--__p2) * 100vw,
+    var(--__max5) * 1rem
+  );
+
+  /* no fluid size for smaller headings */
+  --text-style4__font-size: calc(var(--__size4) * 1rem);
+  --text-style3__font-size: calc(var(--__size3) * 1rem);
+  --text-style2__font-size: calc(var(--__size2) * 1rem);
+  --text-style1__font-size: calc(var(--__size1) * 1rem);
+}

@@ -1,0 +1,42 @@
+/* Common Typographic Scale Ratios:
+  1.067 — Minor Second
+  1.125 — Major Second
+  1.200 — Minor Third
+  1.250 — Major Third
+  1.333 — Perfect Fourth
+  1.414 — Augmented Fourth
+  1.500 — Perfect Fifth
+  1.618 — The Golden Ratio
+  custom — Custom Ratio
+*/
+/*
+  properties witn two underscores is internal
+  and used only for calculations not for actual use
+  --__var-bla-bla
+*/
+#headings-ratio {
+  --heading-scale-ratio: 1.2;
+
+  /* sizes based on scale ratio */
+  --__size10: (var(--heading-scale-ratio) * var(--__size9));
+  --__size9: (var(--heading-scale-ratio) * var(--__size8));
+  --__size8: (var(--heading-scale-ratio) * var(--__size7));
+  --__size7: (var(--heading-scale-ratio) * var(--__size6));
+  --__size6: (var(--heading-scale-ratio) * var(--__size5));
+  --__size5: (var(--heading-scale-ratio) * var(--__size4));
+  --__size4: (var(--heading-scale-ratio) * var(--__size3));
+  --__size3: (var(--heading-scale-ratio) * var(--__size2));
+  --__size2: (var(--heading-scale-ratio) * var(--__size1));
+  --__size1: 1;
+
+  --text-style10__font-size: calc(var(--__size10) * 1rem);
+  --text-style9__font-size: calc(var(--__size9) * 1rem);
+  --text-style8__font-size: calc(var(--__size8) * 1rem);
+  --text-style7__font-size: calc(var(--__size7) * 1rem);
+  --text-style6__font-size: calc(var(--__size6) * 1rem);
+  --text-style5__font-size: calc(var(--__size5) * 1rem);
+  --text-style4__font-size: calc(var(--__size4) * 1rem);
+  --text-style3__font-size: calc(var(--__size3) * 1rem);
+  --text-style2__font-size: calc(var(--__size2) * 1rem);
+  --text-style1__font-size: calc(var(--__size1) * 1rem);
+}
