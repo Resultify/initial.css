@@ -32,7 +32,7 @@
     "test": "npm run lint-css && npm run standardJs && npm run checkJs",
     "build": "node ./build/build.exec.js",
     "watch": "node ./build/watch.exec.js",
-    "start": "npm run watch & http-server -p 8083 demo/"
+    "start": "npm run watch & http-server -p 8083 docs/"
   },
   "devDependencies": {
     "@types/node": "~20.2.5",

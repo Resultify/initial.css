@@ -17,18 +17,18 @@ async function cleanDist () {
 }
 
 /**
- * @summary Clean all css files in the demo folder
+ * @summary Clean all css files in the docs folder
  * @async
  * @returns undefined
  */
-async function cleanDemoCss () {
+async function cleanDocsCss () {
   try {
     if (globals.ROOT_DIR_NAME === 'initial-css') {
-      await deleteAsync([`${globals.DEMO}/**/*.css`])
+      await deleteAsync([`${globals.DOCS}/**/*.css`])
     }
   } catch (error) {
     console.error(error)
   }
 }
 
-export { cleanDemoCss, cleanDist }
+export { cleanDocsCss, cleanDist }

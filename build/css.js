@@ -7,13 +7,13 @@ import { globals } from './globals.js'
 
 /**
  * @summary Compile Css
- * @param {boolean} dist - Compile for dist folder or demo folder
+ * @param {boolean} dist - Compile for dist folder or docs folder
  * @async
  * @returns undefined
  */
 async function compileCss (dist = false) {
-  const path = dist ? globals.DIST : globals.DEMO
-  const folderName = dist ? 'dist' : 'demo'
+  const path = dist ? globals.DIST : globals.DOCS
+  const folderName = dist ? 'dist' : 'docs'
   try {
     const files = await globby(`${globals.SRC}/*.css`, { objectMode: true })
     if (files !== undefined) {
