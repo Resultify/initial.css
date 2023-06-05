@@ -68,6 +68,13 @@ html {
 [hidden], .hidden {
   display: none !important;
 }
+/*
+  add scroll-margin-top to prevent the anchor link
+  from being hidden under the sticky header
+*/
+:target {
+  scroll-margin-top: var(--root-sticky-header-height, 0);
+}
 :where(
   h1,
   h2,
@@ -217,7 +224,6 @@ html {
   text-decoration-thickness: var(--link-hover__text-decoration-thickness, var(--link__text-decoration-thickness, auto));
   text-decoration-style: var(--link-hover__text-decoration-style, var(--link__text-decoration-style, solid));
   text-decoration-color: var(--link-hover__text-decoration-color, var(--link__text-decoration-color, currentColor));
-  /* --link-visited__color: var(--link-hover__color, currentColor); */
 }
 /* remove link styles from <a> without href attribute and class */
 :where(a:not([href]):not([class]), a:not([href]):not([class]):hover) {
@@ -232,14 +238,25 @@ html {
   align-self: center;
   flex-shrink: 0;
 }
-/* Link Helpers */
-/* [ icon-start ] or [ icon-end ] */
-/* links with icons to the left[start] or right[end] */
-:where(a:not(.button).icon-start) {
-  flex-direction: row-reverse;
+/* separate settings for headings with links with fallback to link settings */
+:where(h1,h2,h3,h4,h5,h6) :where(a:not(.button)) {
+  color: var(--heading-link__color, var(--link__color, #0052c0));
+  text-underline-offset: var(--heading-link__text-underline-offset, var(--link__text-underline-offset, auto));
+  text-decoration-line: var(--heading-link__text-decoration-line, var(--link__text-decoration-line, underline));
+  text-decoration-thickness: var(--heading-link__text-decoration-thickness, var(--link__text-decoration-thickness, auto));
+  text-decoration-style: var(--heading-link__text-decoration-style, var(--link__text-decoration-style, solid));
+  text-decoration-color: var(--heading-link__text-decoration-color, var(--link__text-decoration-color, currentColor));
 }
-:where(a:not(.button).icon-end) {
-  flex-direction: row;
+:where(h1,h2,h3,h4,h5,h6) :where(a:not(.button):visited) {
+  color: var(--heading-link-visited__color, var(--link-visited__color, #551a8b));
+}
+:where(h1,h2,h3,h4,h5,h6) :where(a:not(.button):hover) {
+  color: var(--heading-link-hover__color, var(--link-hover__color, currentColor));
+  text-underline-offset: var(--heading-link-hover__text-underline-offset, var(--link-hover__text-underline-offset, var(--link__text-underline-offset, auto)));
+  text-decoration-line: var(--heading-link-hover__text-decoration-line, var(--link-hover__text-decoration-line, var(--link__text-decoration-line, underline)));
+  text-decoration-thickness: var(--heading-link-hover__text-decoration-thickness, var(--link-hover__text-decoration-thickness, var(--link__text-decoration-thickness, auto)));
+  text-decoration-style: var(--heading-link-hover__text-decoration-style, var(--link-hover__text-decoration-style, var(--link__text-decoration-style, solid)));
+  text-decoration-color: var(--heading-link-hover__text-decoration-color, var(--link-hover__text-decoration-color, var(--link__text-decoration-color, currentColor)));
 }
 /* focus-visible settings for buttons */
 /* with possibility to override them in the root css file specificly for buttons */
@@ -363,28 +380,6 @@ input[type="submit"],
 input[type="reset"]
 ):where(.btn-w100 + .btn-w100) {
   margin-block-start: 0.5rem;
-}
-/* Buttons Helpers */
-/* [ icon-start] or [ icon-end ] */
-/* buttons with icons to the left[start] or right[end] */
-/* links with icons to the left[start] or right[end] */
-:where(
-.button,
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="file"]).icon-start {
-  flex-direction: row;
-}
-:where(
-.button,
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="file"]).icon-end {
-  flex-direction: row-reverse;
 }
 :where(abbr[title]) {
   cursor: help;
@@ -591,6 +586,10 @@ kbd) {
 /* remove default border from iframe */
 :where(iframe) {
   border: 0;
+}
+:where(video) {
+  max-width: 100%;
+  height: auto;
 }
 
 /*# sourceMappingURL=initial.css.map */
