@@ -33,7 +33,6 @@
   text-decoration-thickness: var(--link-hover__text-decoration-thickness, var(--link__text-decoration-thickness, auto));
   text-decoration-style: var(--link-hover__text-decoration-style, var(--link__text-decoration-style, solid));
   text-decoration-color: var(--link-hover__text-decoration-color, var(--link__text-decoration-color, currentColor));
-  /* --link-visited__color: var(--link-hover__color, currentColor); */
 }
 
 /* remove link styles from <a> without href attribute and class */
@@ -49,4 +48,27 @@
   /* transform: translateY(1px); */
   align-self: center;
   flex-shrink: 0;
+}
+
+/* separate settings for headings with links with fallback to link settings */
+:where(h1,h2,h3,h4,h5,h6) :where(a:not(.button)) {
+  color: var(--heading-link__color, var(--link__color, #0052c0));
+  text-underline-offset: var(--heading-link__text-underline-offset, var(--link__text-underline-offset, auto));
+  text-decoration-line: var(--heading-link__text-decoration-line, var(--link__text-decoration-line, underline));
+  text-decoration-thickness: var(--heading-link__text-decoration-thickness, var(--link__text-decoration-thickness, auto));
+  text-decoration-style: var(--heading-link__text-decoration-style, var(--link__text-decoration-style, solid));
+  text-decoration-color: var(--heading-link__text-decoration-color, var(--link__text-decoration-color, currentColor));
+}
+
+:where(h1,h2,h3,h4,h5,h6) :where(a:not(.button):visited) {
+  color: var(--heading-link-visited__color, var(--link-visited__color, #551a8b));
+}
+
+:where(h1,h2,h3,h4,h5,h6) :where(a:not(.button):hover) {
+  color: var(--heading-link-hover__color, var(--link-hover__color, currentColor));
+  text-underline-offset: var(--heading-link-hover__text-underline-offset, var(--link-hover__text-underline-offset, var(--link__text-underline-offset, auto)));
+  text-decoration-line: var(--heading-link-hover__text-decoration-line, var(--link-hover__text-decoration-line, var(--link__text-decoration-line, underline)));
+  text-decoration-thickness: var(--heading-link-hover__text-decoration-thickness, var(--link-hover__text-decoration-thickness, var(--link__text-decoration-thickness, auto)));
+  text-decoration-style: var(--heading-link-hover__text-decoration-style, var(--link-hover__text-decoration-style, var(--link__text-decoration-style, solid)));
+  text-decoration-color: var(--heading-link-hover__text-decoration-color, var(--link-hover__text-decoration-color, var(--link__text-decoration-color, currentColor)));
 }

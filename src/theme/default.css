@@ -144,6 +144,21 @@
   /* --heading__font-weight:; */
   /* --heading__color:; */
 
+  /* ----- heading link ----- */
+  /* --heading-link__color:; */
+  /* --heading-link__text-decoration-offset:; */
+  --heading-link__text-decoration-line: none;
+  /* --heading-link__text-decoration-thickness:; */
+  /* --heading-link__text-decoration-style:; */
+  /* --heading-link__text-decoration-color:; */
+  /* --heading-link-hover__color:; */
+  --heading-link-hover__text-decoration-offset: 0;
+  /* --heading-link-hover__text-decoration-line:; */
+  --heading-link-hover__text-decoration-thickness: 0.15ex;
+  /* --heading-link-hover__text-decoration-style:; */
+  /* --heading-link-hover__text-decoration-color:; */
+  /* --heading-link-visited__color:; */
+
   /* 10 headings styles separatly */
   /* --text-style10__font-size:; */
   /* --text-style9__font-size:; */
