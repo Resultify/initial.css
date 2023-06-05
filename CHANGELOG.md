@@ -1,4 +1,10 @@
 
+#### v0.0.2 `June 5, 2023`
+
+- **[TASK]** rename package with prefix @resultify ([f64d28d](https://github.com/Resultify/initial.css/commit/f64d28d))
+
+***
+
 #### v0.0.1 `June 5, 2023`
 
 - **[TASK]** add utils.css ([a9f2d74](https://github.com/Resultify/initial.css/commit/a9f2d74))
