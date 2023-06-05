@@ -45,7 +45,7 @@ input[type="reset"]),
   -webkit-touch-callout: none;
   min-width: 9ch;
   text-decoration: none;
-  vertical-align: middle;
+  align-items: baseline;
   appearance: none;
 }
 
@@ -108,6 +108,8 @@ input[type="reset"]
   height: 1em;
   width: 1em;
   fill: currentcolor;
+  align-self: center;
+  flex-shrink: 0;
 }
 
 :where(

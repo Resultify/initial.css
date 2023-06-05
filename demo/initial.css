@@ -65,7 +65,7 @@ html {
   background-color: var(--root-selection__bg-color, #8426854d);
   color: var(--root-selection__color, curentColor);
 }
-[hidden] {
+[hidden], .hidden {
   display: none !important;
 }
 :where(
@@ -178,6 +178,13 @@ html {
   --heading__color: var(--text-style1__color);
   font-size: var(--text-style1__font-size, 1rem);
 }
+/* icon inside heading */
+:where(h1,h2,h3,h4,h5,h6) :where(svg) {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
 /* focus-visible settings for links */
 /* with possibility to override them in the root css file specificly for links */
 :where(a:not(.button)):focus-visible {
@@ -280,7 +287,7 @@ input[type="reset"]),
   -webkit-touch-callout: none;
   min-width: 9ch;
   text-decoration: none;
-  vertical-align: middle;
+  align-items: baseline;
   appearance: none;
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -336,6 +343,8 @@ input[type="reset"]
   height: 1em;
   width: 1em;
   fill: currentcolor;
+  align-self: center;
+  flex-shrink: 0;
 }
 :where(
 .button,
@@ -389,8 +398,15 @@ kbd) {
   padding: 0.2em 0.4em;
   color: var(--code__color, currentColor);
   background-color: var(--code__bg-color, initial);
-  border-radius: 6px;
+  border-radius: var(--code__border-radius, initial);
   word-wrap: break-word;
+}
+:where(pre code) {
+  font-size: inherit;
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
+  word-break: normal;
 }
 /* Override user agent default margins */
 /* Set it to 0 for a better styling control */
@@ -415,9 +431,10 @@ kbd) {
 }
 /* horizontal rule element */
 :where(hr) {
-  height: 0.1em;
-  background-color: var(--hr__bg-color, gray);
   border: none;
+  border-top-width: var(--hr__border-top-width, 1px);
+  border-top-style: var(--hr__border-top-style, solid);
+  border-top-color: var(--hr__border-top-color, grey);
 }
 :where(pre) {
   overflow: auto;
@@ -428,13 +445,6 @@ kbd) {
   background-color: var(--pre__bg-color, initial);
   border-radius: 6px;
   font-family: var(--root-mono__font-family, monospace);
-}
-:where(pre code) {
-  font-size: inherit;
-  padding: 0;
-  background-color: transparent;
-  color: inherit;
-  word-break: normal;
 }
 /* Details element */
 :where(summary) {

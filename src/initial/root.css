@@ -70,6 +70,6 @@ html {
   color: var(--root-selection__color, curentColor);
 }
 
-[hidden] {
+[hidden], .hidden {
   display: none !important;
 }

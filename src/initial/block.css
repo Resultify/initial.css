@@ -24,9 +24,10 @@
 
 /* horizontal rule element */
 :where(hr) {
-  height: 0.1em;
-  background-color: var(--hr__bg-color, gray);
   border: none;
+  border-top-width: var(--hr__border-top-width, 1px);
+  border-top-style: var(--hr__border-top-style, solid);
+  border-top-color: var(--hr__border-top-color, grey);
 }
 
 :where(pre) {
@@ -38,14 +39,6 @@
   background-color: var(--pre__bg-color, initial);
   border-radius: 6px;
   font-family: var(--root-mono__font-family, monospace);
-}
-
-:where(pre code) {
-  font-size: inherit;
-  padding: 0;
-  background-color: transparent;
-  color: inherit;
-  word-break: normal;
 }
 
 /* Details element */

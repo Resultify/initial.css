@@ -1,5 +1,5 @@
 {
-  "name": "initial-css",
+  "name": "initial.css",
   "version": "0.0.1",
   "description": "",
   "keywords": [
@@ -10,6 +10,7 @@
     "initial",
     "inherit"
   ],
+  "bugs": "",
   "type": "module",
   "homepage": "",
   "license": "MIT",
@@ -17,6 +18,8 @@
     "type": "git",
     "url": ""
   },
+  "main": "dist/initial.min.css",
+  "style": "dist/initial.min.css",
   "files": [
     "dist/",
     "src/"
@@ -59,7 +62,7 @@
   },
   "standard": {
     "ignore": [
-      "docs/"
+      "dist/"
     ]
   },
   "browserslist": [
@@ -80,7 +83,7 @@
     ],
     "rules": {},
     "ignoreFiles": [
-      "docs/"
+      "dist/"
     ]
   }
 }

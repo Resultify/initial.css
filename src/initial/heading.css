@@ -121,3 +121,11 @@
   --heading__color: var(--text-style1__color);
   font-size: var(--text-style1__font-size, 1rem);
 }
+
+/* icon inside heading */
+:where(h1,h2,h3,h4,h5,h6) :where(svg) {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
