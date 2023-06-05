@@ -131,26 +131,3 @@ input[type="reset"]
 ):where(.btn-w100 + .btn-w100) {
   margin-block-start: 0.5rem;
 }
-
-/* Buttons Helpers */
-/* [ icon-start] or [ icon-end ] */
-/* buttons with icons to the left[start] or right[end] */
-/* links with icons to the left[start] or right[end] */
-:where(
-.button,
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="file"]).icon-start {
-  flex-direction: row;
-}
-:where(
-.button,
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="file"]).icon-end {
-  flex-direction: row-reverse;
-}

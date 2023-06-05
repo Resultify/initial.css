@@ -50,13 +50,3 @@
   align-self: center;
   flex-shrink: 0;
 }
-
-/* Link Helpers */
-/* [ icon-start ] or [ icon-end ] */
-/* links with icons to the left[start] or right[end] */
-:where(a:not(.button).icon-start) {
-  flex-direction: row-reverse;
-}
-:where(a:not(.button).icon-end) {
-  flex-direction: row;
-}
