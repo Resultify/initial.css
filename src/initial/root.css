@@ -73,3 +73,11 @@ html {
 [hidden], .hidden {
   display: none !important;
 }
+
+/*
+  add scroll-margin-top to prevent the anchor link
+  from being hidden under the sticky header
+*/
+:target {
+  scroll-margin-top: var(--root-sticky-header-height, 0);
+}
