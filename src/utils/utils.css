@@ -1,0 +1,31 @@
+/* visually-hidden element amd visually-hidden focusable element  */
+.visually-hidden, .visually-hidden-focusable:not(:focus):not(:focus-within) {
+    clip: rect(0 0 0 0);
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 0;
+    white-space: nowrap;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+/* auto space for each child elements except first */
+.flow > * + * {
+  margin-block-start: var(--space, 1em);
+}
+
+/* text utils */
+.text-start {
+  text-align: start;
+}
+.text-center {
+  text-align: center;
+}
+.text-end {
+  text-align: end;
+}
+.text-justify {
+  text-align: justify;
+}
