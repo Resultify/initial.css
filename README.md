@@ -1,15 +1,6 @@
-# Initial CSS
+# initial.css
 
-todo
-css overview
-mask-image blank link
-responsive text
 
-heading links
-css min
-css source map
-css default
-theme
 
-lighthouse tests
-accessibility tests
+responsive table
+gap in links and buttons for icons
