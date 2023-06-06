@@ -16,14 +16,17 @@
   <style>
     section [class^="text-"] {
       display: flex;
-      display: flex;
       align-items: center;
       gap: 0 1.5rem;
       justify-content: flex-start;
+      flex-wrap: wrap;
     }
-    section :where([class^="text-"]) span {
+    section :where([class^="text-"]) .pxsize {
       font-size: 1.2rem;
       opacity: 0.7;
+    }
+    section :where([class^="text-"]) .heading {
+      min-width: 0;
     }
   </style>
 </head>
@@ -64,16 +67,22 @@
           <input type="number" step="0.01" min="0" max="5" name="headingsRatio" />
         </label>
       </form>
-      <h3 class="text-style10"><span></span> Heading 10 - Nunc vitae nisi mauris.</h3>
-      <h4 class="text-style9"><span></span> Heading 9 - Pellentesque egestas eu risus eu vestibulum.</h4>
-      <h5 class="text-style8"><span></span> Heading 8 - Phasellus quis blandit lorem.</h5>
-      <h6 class="text-style7"><span></span> Heading 7 - Vivamus iaculis sagittis pretium.</h6>
-      <h1 class="text-style6"><span></span> Heading 6 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
-      <h2 class="text-style5"><span></span> Heading 5 - Suspendisse tellus orci, varius a hendrerit vitae, tempus quis turpis.</h2>
-      <h3 class="text-style4"><span></span> Heading 4 - Nam at volutpat nisl pellentesque fermentum tincidunt.</h3>
-      <h4 class="text-style3"><span></span> Heading 3 - Praesent hendrerit arcu velit, vel euismod diam varius quis.</h4>
-      <h5 class="text-style2"><span></span> Heading 2 - Ut velit urna, luctus in imperdiet nec, eleifend cursus diam.</h5>
-      <h6 class="text-style1"><span></span> Heading 1 - Nam sit amet ex vitae odio pellentesque fermentum tincidunt sit amet odio.</h6>
+      <h3 class="text-style10">
+        <span class="pxsize"></span>
+        <span class="heading">Heading 10 - Nunc vitae nisi mauris.</span>
+      </h3>
+      <h4 class="text-style9">
+        <span class="pxsize"></span>
+        <span class="heading">Heading 9 - Pellentesque egestas eu risus eu vestibulum.</span>
+      </h4>
+      <h5 class="text-style8"><span class="pxsize"></span> Heading 8 - Phasellus quis blandit lorem.</h5>
+      <h6 class="text-style7"><span class="pxsize"></span> Heading 7 - Vivamus iaculis sagittis pretium.</h6>
+      <h1 class="text-style6"><span class="pxsize"></span> Heading 6 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+      <h2 class="text-style5"><span class="pxsize"></span> Heading 5 - Suspendisse tellus orci, varius a hendrerit vitae, tempus quis turpis.</h2>
+      <h3 class="text-style4"><span class="pxsize"></span> Heading 4 - Nam at volutpat nisl pellentesque fermentum tincidunt.</h3>
+      <h4 class="text-style3"><span class="pxsize"></span> Heading 3 - Praesent hendrerit arcu velit, vel euismod diam varius quis.</h4>
+      <h5 class="text-style2"><span class="pxsize"></span> Heading 2 - Ut velit urna, luctus in imperdiet nec, eleifend cursus diam.</h5>
+      <h6 class="text-style1"><span class="pxsize"></span> Heading 1 - Nam sit amet ex vitae odio pellentesque fermentum tincidunt sit amet odio.</h6>
       <p>Paragraph - Donec sit amet metus aliquet, porttitor nisl eget, maximus urna.</p>
     </section>
 
@@ -87,16 +96,16 @@
           <input type="number" step="0.01" min="0" max="5" name="headingsRatio" />
         </label>
       </form>
-      <h3 class="text-style10"><span></span> Heading 10 - Nunc vitae nisi mauris.</h3>
-      <h4 class="text-style9"><span></span> Heading 9 - Pellentesque egestas eu risus eu vestibulum.</h4>
-      <h5 class="text-style8"><span></span> Heading 8 - Phasellus quis blandit lorem.</h5>
-      <h6 class="text-style7"><span></span> Heading 7 - Vivamus iaculis sagittis pretium.</h6>
-      <h1 class="text-style6"><span></span> Heading 6 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
-      <h2 class="text-style5"><span></span> Heading 5 - Suspendisse tellus orci, varius a hendrerit vitae, tempus quis turpis.</h2>
-      <h3 class="text-style4"><span></span> Heading 4 - Nam at volutpat nisl pellentesque fermentum tincidunt.</h3>
-      <h4 class="text-style3"><span></span> Heading 3 - Praesent hendrerit arcu velit, vel euismod diam varius quis.</h4>
-      <h5 class="text-style2"><span></span> Heading 2 - Ut velit urna, luctus in imperdiet nec, eleifend cursus diam.</h5>
-      <h6 class="text-style1"><span></span> Heading 1 - Nam sit amet ex vitae odio pellentesque fermentum tincidunt sit amet odio.</h6>
+      <h3 class="text-style10"><span class="pxsize"></span> Heading 10 - Nunc vitae nisi mauris.</h3>
+      <h4 class="text-style9"><span class="pxsize"></span> Heading 9 - Pellentesque egestas eu risus eu vestibulum.</h4>
+      <h5 class="text-style8"><span class="pxsize"></span> Heading 8 - Phasellus quis blandit lorem.</h5>
+      <h6 class="text-style7"><span class="pxsize"></span> Heading 7 - Vivamus iaculis sagittis pretium.</h6>
+      <h1 class="text-style6"><span class="pxsize"></span> Heading 6 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+      <h2 class="text-style5"><span class="pxsize"></span> Heading 5 - Suspendisse tellus orci, varius a hendrerit vitae, tempus quis turpis.</h2>
+      <h3 class="text-style4"><span class="pxsize"></span> Heading 4 - Nam at volutpat nisl pellentesque fermentum tincidunt.</h3>
+      <h4 class="text-style3"><span class="pxsize"></span> Heading 3 - Praesent hendrerit arcu velit, vel euismod diam varius quis.</h4>
+      <h5 class="text-style2"><span class="pxsize"></span> Heading 2 - Ut velit urna, luctus in imperdiet nec, eleifend cursus diam.</h5>
+      <h6 class="text-style1"><span class="pxsize"></span> Heading 1 - Nam sit amet ex vitae odio pellentesque fermentum tincidunt sit amet odio.</h6>
       <p>Paragraph - Donec sit amet metus aliquet, porttitor nisl eget, maximus urna.</p>
     </section>
 

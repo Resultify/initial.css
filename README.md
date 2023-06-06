@@ -1,6 +1,3 @@
 # initial.css
 
-
-
-responsive table
-gap in links and buttons for icons
+Browser default initial CSS styles with integrated custom properties.
