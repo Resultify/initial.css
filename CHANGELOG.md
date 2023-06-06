@@ -1,4 +1,10 @@
 
+#### v0.0.3 `June 6, 2023`
+
+- **[TASK]** add responsive table support ([eb336fb](https://github.com/Resultify/initial.css/commit/eb336fb))
+
+***
+
 #### v0.0.2 `June 5, 2023`
 
 - **[TASK]** rename package with prefix @resultify ([f64d28d](https://github.com/Resultify/initial.css/commit/f64d28d))
