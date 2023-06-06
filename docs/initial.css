@@ -25,7 +25,7 @@ html {
   background-color: var(--root__bg-color, inherit);
 
   /* use default browser color "CanvasText" = rgb(0, 0, 0) */
-  color: var(--root__color, initial);
+  color: var(--root__color, canvastext);
 
   /*
     browser emphasizes rendering speed
@@ -302,6 +302,7 @@ input[type="reset"]),
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
+  touch-action: manipulation;
   min-width: 9ch;
   text-decoration: none;
   align-items: baseline;
@@ -497,6 +498,18 @@ kbd) {
   border-width: var(--table__border-width, 1px);
   border-style: var(--table__border-style);
   border-color: var(--table__border-color, grey);
+}
+/* responsive table with horizontal scroll */
+:where(.responsive-table) {
+  max-width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: inline mandatory;
+  scroll-behavior: smooth;
+}
+/* snap scroll to the start of each cell */
+:where(.responsive-table th),
+:where(.responsive-table td) {
+  scroll-snap-align: start;
 }
 /* focus-visible settings for inputs */
 /* with possibility to override them in the root css file specificly for inputs */
