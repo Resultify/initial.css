@@ -86,13 +86,6 @@
   gap: 0 1ch;
 }
 
-/* Lists Helpers */
-/* [ nav-vertical] */
-/* horizontal or vertical navigation list */
-:where(nav.nav-vertical ul) {
-  flex-direction: column;
-}
-
 :where(dialog) {
   border-color: grey;
   background-color: var(--root__bg-color);

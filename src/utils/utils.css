@@ -29,3 +29,15 @@
 .text-justify {
   text-align: justify;
 }
+
+/* responsive table with horizontal scroll */
+:where(.responsive-table) {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* vertical navigation list */
+/* nav-vertical */
+:where(nav.nav-vertical ul) {
+  flex-direction: column;
+}
