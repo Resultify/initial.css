@@ -25,6 +25,7 @@ async function cleanDocsCss () {
   try {
     if (globals.ROOT_DIR_NAME === 'initial.css') {
       await deleteAsync([`${globals.DOCS}/**/*.css`])
+      await deleteAsync([`${globals.DOCS}/**/*.css.map`])
     }
   } catch (error) {
     console.error(error)
