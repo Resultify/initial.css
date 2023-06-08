@@ -479,12 +479,6 @@ kbd) {
   padding-inline-start: 0;
   gap: 0 1ch;
 }
-/* Lists Helpers */
-/* [ nav-vertical] */
-/* horizontal or vertical navigation list */
-:where(nav.nav-vertical ul) {
-  flex-direction: column;
-}
 :where(dialog) {
   border-color: grey;
   background-color: var(--root__bg-color);
@@ -493,23 +487,12 @@ kbd) {
   border-collapse: collapse;
   border-spacing: 0;
 }
-:where(table, th, td) {
-  padding: 0.3em 0.5em;
+:where(th, td) {
   border-width: var(--table__border-width, 1px);
   border-style: var(--table__border-style);
   border-color: var(--table__border-color, grey);
-}
-/* responsive table with horizontal scroll */
-:where(.responsive-table) {
-  max-width: 100%;
-  overflow-x: auto;
-  scroll-snap-type: inline mandatory;
-  scroll-behavior: smooth;
-}
-/* snap scroll to the start of each cell */
-:where(.responsive-table th),
-:where(.responsive-table td) {
-  scroll-snap-align: start;
+  padding-inline: var(--table__padding-inline, 0.5em);
+  padding-block: var(--table__padding-block, 0.3em);
 }
 /* focus-visible settings for inputs */
 /* with possibility to override them in the root css file specificly for inputs */

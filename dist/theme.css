@@ -133,6 +133,8 @@
   /* --table__border-color:; */
   /* --table__border-width:; */
   --table__border-style: solid;
+  /* --table__padding-block:; */
+  /* --table__padding-inline:; */
 
 
 
