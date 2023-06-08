@@ -1,7 +1,7 @@
 import chokidar from 'chokidar'
 import chalk from 'chalk'
 import { checkNode } from './check.js'
-import { compileCss } from './css.js'
+import { compileDemoCss } from './css.js'
 import { globals } from './globals.js'
 checkNode()
 
@@ -12,10 +12,10 @@ checkNode()
  */
 async function watchSrc () {
   try {
-    await compileCss()
+    await compileDemoCss()
     chokidar.watch([`${globals.SRC}/**/*.css`], { ignoreInitial: true, awaitWriteFinish: false }).on('all', (event, path) => {
       console.log(`${chalk.red(event)} ${path}`)
-      compileCss()
+      compileDemoCss()
     })
   } catch (error) {
     console.error(error)

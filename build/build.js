@@ -11,7 +11,6 @@ checkNode()
 async function build () {
   await cleanDist()
   await compileCss()
-  await compileCss(true)
   await compileMinCss()
 }
 

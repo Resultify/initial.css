@@ -8,7 +8,7 @@ import { globals } from './globals.js'
  */
 async function cleanDist () {
   try {
-    if (globals.ROOT_DIR_NAME === 'initial-css') {
+    if (globals.ROOT_DIR_NAME === 'initial.css') {
       await deleteAsync([`${globals.DIST}/**/*`])
     }
   } catch (error) {
@@ -23,7 +23,7 @@ async function cleanDist () {
  */
 async function cleanDocsCss () {
   try {
-    if (globals.ROOT_DIR_NAME === 'initial-css') {
+    if (globals.ROOT_DIR_NAME === 'initial.css') {
       await deleteAsync([`${globals.DOCS}/**/*.css`])
     }
   } catch (error) {
