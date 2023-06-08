@@ -1,4 +1,16 @@
 
+#### v0.0.4 `June 8, 2023`
+
+- **[DOC]** add how to contribute info to readme ([b322a42](https://github.com/Resultify/initial.css/commit/b322a42))
+- **[TASK]** update npm packages, add browserslist as a separate config ([3977c04](https://github.com/Resultify/initial.css/commit/3977c04))
+- **[TASK]** cleanup docs files, add script to run cleanup before each watch run ([5eee1f1](https://github.com/Resultify/initial.css/commit/5eee1f1))
+- **[TASK]** modify the build process, provide only initial.css as a main distribution file ([1e7da5d](https://github.com/Resultify/initial.css/commit/1e7da5d))
+- **[DOC]** add readme file ([144db40](https://github.com/Resultify/initial.css/commit/144db40))
+- **[TASK]** update package.json, add bugs page, description, repository link, main entry file ([5b1ab79](https://github.com/Resultify/initial.css/commit/5b1ab79))
+- **[TASK]** move responsive-table and vertical navigation from initial to utilities ([cef8fd8](https://github.com/Resultify/initial.css/commit/cef8fd8))
+
+***
+
 #### v0.0.3 `June 6, 2023`
 
 - **[TASK]** add responsive table support ([eb336fb](https://github.com/Resultify/initial.css/commit/eb336fb))
