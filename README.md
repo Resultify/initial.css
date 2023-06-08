@@ -12,6 +12,8 @@
 - [Why?](#why)
 - [Main features and advantages to other solutions](#main-features-and-advantages-to-other-solutions)
 - [Quick start](#quick-start)
+- [Contributing](#contributing)
+- [Changelog](CHANGELOG.md)
 
 ## Why?
 - Despite the advancements in modern browsers, it is still good to have a basic corrections for the default CSS styles of the browser  - the so-called `user agent stylesheet`.
@@ -19,6 +21,7 @@
 
 
 ## Main features and advantages to other solutions
+- Simple and small. Only modern Browsers are supported (>1% usage).
 - Simplified CSS cascade. One way to simplify CSS cascade is by utilizing the `:where()` pseudo-class with **zero** specificity. This makes it effortless to modify styles in any location at a later time.
 - **Ten** heading styles. We've added four new heading styles to the existing six, providing more visual design options while maintaining accessibility and correct heading semantics.
 - Easy implementation of light and dark themes.
@@ -64,3 +67,10 @@ npm install @resultify/initial.css
 5. You can also find some useful CSS utilities in `src/utils` folder which you can directly import to your project or paste only parts of code to your own CSS files.
 6. There are also accessibility helpers in `src/accessibility` folder which can be useful for your project.
 7. Add print styles to your project. Example you can find in `src/print.css`.
+
+## Contributing
+1. Clone/fork the repository and run `npm install` to install dependencies.
+2. Run `npm start` to start the development server with watcher.
+3. Add your changes to `src/*` files and test the result in browser on `http://localhost:8083`
+4. Run `npm test` to run tests.
+5. Commit your changes and create a pull request.
