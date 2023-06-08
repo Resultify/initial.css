@@ -1,25 +1,26 @@
 {
   "name": "@resultify/initial.css",
   "version": "0.0.3",
-  "description": "",
+  "description": "Browser default initial CSS styles with integrated custom properties.",
   "keywords": [
     "css",
     "metodology",
     "utility",
     "user-agent",
     "initial",
-    "inherit"
+    "inherit",
+    "reset",
+    "normalize"
   ],
-  "bugs": "",
+  "bugs": "https://github.com/Resultify/initial.css/issues",
   "type": "module",
-  "homepage": "",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Resultify/initial.css"
   },
-  "main": "dist/initial.min.css",
-  "style": "dist/initial.min.css",
+  "main": "dist/initial.css",
+  "style": "dist/initial.css",
   "files": [
     "dist/",
     "src/"
