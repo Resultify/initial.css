@@ -18,6 +18,11 @@
   margin-inline: 0;
 }
 
+/* if soft wrap is not possible use hard wrap */
+:where(p) {
+  overflow-wrap: break-word;
+}
+
 :where(address) {
   font-style: inherit;
 }
