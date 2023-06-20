@@ -32,6 +32,7 @@
     "checkJs": "tsc -p jsconfig.json --maxNodeModuleJsDepth 0",
     "test": "npm run lint-css && npm run standardJs && npm run checkJs",
     "build": "node ./build/build.exec.js",
+    "docs": "node ./build/docs.exec.js",
     "watch": "node ./build/watch.exec.js",
     "start": "npm run watch & http-server -p 8083 docs/"
   },
