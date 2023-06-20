@@ -9,6 +9,9 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 
+  /* Improve text rendering on masOS */
+  -webkit-font-smoothing: antialiased;
+
   /*
     inherit browsers font size which depends on browsers settings,
     by default it is 16px
@@ -421,6 +424,10 @@ kbd) {
 ) {
   margin-block: 0;
   margin-inline: 0;
+}
+/* if soft wrap is not possible use hard wrap */
+:where(p) {
+  overflow-wrap: break-word;
 }
 :where(address) {
   font-style: inherit;
