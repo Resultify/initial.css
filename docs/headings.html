@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="initial.css">
   <link rel="stylesheet" href="theme.css">
   <link rel="stylesheet" href="headings.css">
+  <link rel="stylesheet" href="utils.css">
   <link rel="stylesheet" href="print.css">
 
   <!-- noindex, nofollow for search engines, but it is not guaranteed -->
@@ -51,9 +52,9 @@
   <main>
     <form id="page-text-size">
       <label>
-        Default page text size:
+        <span>Default page text size:</span>
         <input type="number" step="1" min="1" max="30" name="textSize" />
-        px
+        <span>px</span>
       </label>
     </form>
 
@@ -63,7 +64,7 @@
       <h2>Heading sizes by scale ratio</h2>
       <form>
         <label>
-          Set the ratio of heading sizes:
+          <span>Set the ratio of heading sizes:</span>
           <input type="number" step="0.01" min="0" max="5" name="headingsRatio" />
         </label>
       </form>
@@ -92,7 +93,7 @@
       <h2>Fluid Headings</h2>
       <form>
         <label>
-          Set the ratio of heading sizes:
+          <span>Set the ratio of heading sizes:</span>
           <input type="number" step="0.01" min="0" max="5" name="headingsRatio" />
         </label>
       </form>
