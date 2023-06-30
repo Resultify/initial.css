@@ -1,3 +1,12 @@
+### v0.0.5 `June 30, 2023`
+* **[TASK]** add quick-release config [`41cae1c`](https://github.com/Resultify/initial.css/commit/41cae1c) (dmh)
+* **[TASK]** include utils.css, update html markup for demo site, add internal <span> to have more styling control [`dc8f2c3`](https://github.com/Resultify/initial.css/commit/dc8f2c3) (dmh)
+* **[TASK]** add docs npm cmd to generate docs and include it as a git hook [`0dde13b`](https://github.com/Resultify/initial.css/commit/0dde13b) (dmh)
+* **[TASK]** add antialiased font-smoothing for macOS and hard wrap for paragraphs [`03829b3`](https://github.com/Resultify/initial.css/commit/03829b3) (dmh)
+* **[TASK]** update license [`6b9597d`](https://github.com/Resultify/initial.css/commit/6b9597d) (dmh)
+
+***
+
 
 #### v0.0.4 `June 8, 2023`
 
