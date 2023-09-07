@@ -92,6 +92,11 @@
 }
 
 :where(dialog) {
-  border-color: grey;
-  background-color: var(--root__bg-color);
+  border-color: var(---dialog__border-color, transparent);
+  background-color: var(--dialog__bg-color, inherit);
+}
+
+:where(dialog::backdrop) {
+  backdrop-filter: var(--dialog__backdrop-filter, blur(7px));
+  background-color: var(--dialog-backdrop__bg-color, rgba(0, 0, 0, 0.4));
 }

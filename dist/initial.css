@@ -4,7 +4,7 @@
 *::after {
   box-sizing: border-box;
 }
-html {
+:where(html) {
   /* boost font sizes on small screens on some smartphones and tablets */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -51,7 +51,7 @@ html {
 }
 /* set smooth scrolling only if the user prefers it */
 @media (prefers-reduced-motion: no-preference) {
-  html {
+  :where(html) {
     scroll-behavior: var(--root__scroll-behavior, auto);
   }
 }
@@ -487,8 +487,12 @@ kbd) {
   gap: 0 1ch;
 }
 :where(dialog) {
-  border-color: grey;
-  background-color: var(--root__bg-color);
+  border-color: var(---dialog__border-color, transparent);
+  background-color: var(--dialog__bg-color, inherit);
+}
+:where(dialog::backdrop) {
+  backdrop-filter: var(--dialog__backdrop-filter, blur(7px));
+  background-color: var(--dialog-backdrop__bg-color, rgba(0, 0, 0, 0.4));
 }
 :where(table) {
   border-collapse: collapse;
