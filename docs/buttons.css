@@ -110,4 +110,30 @@
   }
 }
 
+:where(.btn-close) {
+  min-width: 2em;
+  --btn__padding-block: 0.4em;
+  --btn__padding-inline: 0.4em;
+  --btn__bg-color: transparent;
+  --btn__border-style: none;
+  --btn-hover__bg-color: #ccc;
+}
+
+:where(.btn-close) :where(svg) {
+  height: 2em;
+  width: 2em;
+  stroke: currentColor;
+  stroke-width: 2px;
+}
+
+/* dark color scheme */
+
+@media (prefers-color-scheme: dark) {
+  .btn-close {
+    --btn__color: #ccc;
+    --btn-hover__color: #ccc;
+    --btn-hover__bg-color: #444;
+  }
+}
+
 /*# sourceMappingURL=buttons.css.map */
