@@ -20,7 +20,7 @@
   font-size: var(--root__font-size, inherit); /* default = 16px */
 
   /* same line-height for all browsers */
-  line-height: var(--root__line-height, 1.5); /* default = 1.2 */
+  line-height: var(--root__line-height, normal); /* default = normal/1.2 */
 
   /* sans-serif font by default */
   font-family: var(--root__font-family, sans-serif);

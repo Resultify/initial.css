@@ -61,14 +61,18 @@
   /* ============ */
   /* Buttons */
   /* ============ */
-  --btn__font-weight: 700;
+  --btn__bg-color: #FF8B69;
   /* --btn__font-family:; */
   /* --btn__font-size:; */
   --btn__color: #000;
-  --btn__bg-color: #FF8B69;
-  --btn__border-width: 1px;
+  --btn__font-weight: 700;
+  /* --btn__padding-block-start:; */
+  /* --btn__padding-block-end:; */
+  /* --btn__padding-inline-start:; */
+  /* --btn__padding-inline-end:; */
   /* --btn__border-style:; */
   --btn__border-color: #c45400;
+  --btn__border-width: 1px;
   --btn__border-radius: 6px;
   --btn-hover__color: #000;
   --btn-hover__bg-color: #e66b4c;

@@ -37,8 +37,10 @@ input[type="reset"]),
   justify-content: center;
   gap: 0.4ch;
   text-align: center;
-  padding-inline: var(--btn__padding-inline, 1em);
-  padding-block: var(--btn__padding-block, 0.7em);
+  padding-inline-start: var(--btn__padding-inline-start, 1em);
+  padding-inline-end: var(--btn__padding-inline-end, 1em);
+  padding-block-start: var(--btn__padding-block-start, 0.7em);
+  padding-block-end: var(--btn__padding-block-end, 0.7em);
   user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;

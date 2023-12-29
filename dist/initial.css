@@ -19,7 +19,7 @@
   font-size: var(--root__font-size, inherit); /* default = 16px */
 
   /* same line-height for all browsers */
-  line-height: var(--root__line-height, 1.5); /* default = 1.2 */
+  line-height: var(--root__line-height, normal); /* default = normal/1.2 */
 
   /* sans-serif font by default */
   font-family: var(--root__font-family, sans-serif);
@@ -237,7 +237,6 @@
   height: 1em;
   width: 1em;
   fill: currentcolor;
-  /* transform: translateY(1px); */
   align-self: center;
   flex-shrink: 0;
 }
@@ -299,8 +298,10 @@ input[type="reset"]),
   justify-content: center;
   gap: 0.4ch;
   text-align: center;
-  padding-inline: var(--btn__padding-inline, 1em);
-  padding-block: var(--btn__padding-block, 0.7em);
+  padding-inline-start: var(--btn__padding-inline-start, 1em);
+  padding-inline-end: var(--btn__padding-inline-end, 1em);
+  padding-block-start: var(--btn__padding-block-start, 0.7em);
+  padding-block-end: var(--btn__padding-block-end, 0.7em);
   user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
