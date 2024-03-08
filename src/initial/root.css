@@ -49,6 +49,10 @@
     based on color schema settings
   */
   color-scheme: var(--root__color-scheme, normal);
+
+  /* set 4 spaces for tab size */
+  -moz-tab-size: 4;
+  tab-size: 4;
 }
 
 /* set smooth scrolling only if the user prefers it */

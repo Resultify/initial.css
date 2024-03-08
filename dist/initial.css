@@ -48,6 +48,10 @@
     based on color schema settings
   */
   color-scheme: var(--root__color-scheme, normal);
+
+  /* set 4 spaces for tab size */
+  -moz-tab-size: 4;
+  tab-size: 4;
 }
 /* set smooth scrolling only if the user prefers it */
 @media (prefers-reduced-motion: no-preference) {
@@ -97,14 +101,8 @@
   text-wrap: balance;
 
 }
-/* line-height adjustments for additional headings */
-:where(.text-style10, .text-style9) {
-  line-height: 1;
-}
-:where(.text-style8,.text-style7) {
-  line-height: 1.1;
-}
 :where(
+  .text-style11,
   .text-style10,
   .text-style9,
   .text-style8,
@@ -115,6 +113,7 @@
   .text-style3,
   .text-style2,
   .text-style1,
+  .text-style0,
   h1,
   h2,
   h3,
@@ -125,6 +124,13 @@
   font-family: var(--heading__font-family, var(--root__font-family));
   font-weight: var(--heading__font-weight, 700);
   color: var(--heading__color, currentColor);
+}
+/* custom extra big heading style */
+.text-style11 {
+  --heading__font-family: var(--text-style11__font-family);
+  --heading__font-weight: var(--text-style11__font-weight);
+  --heading__color: var(--text-style11__color);
+  font-size: var(--text-style11__font-size, 9rem);
 }
 /* additional styles for headings fot bigger headings (7-10) */
 .text-style10 {
@@ -187,6 +193,13 @@
   --heading__font-weight: var(--text-style1__font-weight);
   --heading__color: var(--text-style1__color);
   font-size: var(--text-style1__font-size, 1rem);
+}
+/* custom extra small heading style */
+.text-style0 {
+  --heading__font-family: var(--text-style0__font-family);
+  --heading__font-weight: var(--text-style0__font-weight);
+  --heading__color: var(--text-style0__color);
+  font-size: var(--text-style0__font-size, 0.88rem);
 }
 /* icon inside heading */
 :where(h1,h2,h3,h4,h5,h6) :where(svg) {

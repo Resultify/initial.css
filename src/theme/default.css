@@ -26,7 +26,7 @@
   --root__font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
   --root-mono__font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
   --root__line-height: 1.6;
-  --root__font-size: 18px;
+  /* --root__font-size: 1.25rem; */
 
 
 
@@ -86,9 +86,9 @@
   /* ============ */
   /* Form */
   /* ============ */
-  --input__font-weight:;
-  --input__font-family:;
-  --input__font-size:;
+  /* --input__font-weight:; */
+  /* --input__font-family:; */
+  /* --input__font-size:; */
   /* --input__color:; */
   /* --input__bg-color:; */
   --input__border-width: 2px;

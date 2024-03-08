@@ -8,7 +8,7 @@
   <!-- css stylesheets -->
   <link rel="stylesheet" href="initial.css">
   <link rel="stylesheet" href="theme.css">
-  <link rel="stylesheet" href="headings.css">
+  <link rel="stylesheet" href="fluid-headings.css">
   <link rel="stylesheet" href="utils.css">
   <link rel="stylesheet" href="print.css">
 
@@ -124,6 +124,11 @@
       <div class="text-styles-wrp">
         <div class="custom-heading-size">
           <h4 class="text-style11"><code class="show-heading-size-in-px"></code>Extra big</h4>
+          <form>
+            <label>
+              <input type="number" step="0.01" min="0" max="5" name="bigHeadingsSize" />
+            </label>
+          </form>
         </div>
         <h3 class="text-style10"><code class="show-heading-size-in-px"></code>Heading style 10</h3>
         <h4 class="text-style9"><code class="show-heading-size-in-px"></code>Heading style 9</h4>
@@ -137,6 +142,11 @@
         <h6 class="text-style1"><code class="show-heading-size-in-px"></code>Heading style 1 <code class="semtag">&lt;h6&gt;</code></h6>
         <div class="custom-heading-size">
           <h2 class="text-style0"><code class="show-heading-size-in-px"></code>Custom extra small heading</h2>
+          <form>
+            <label>
+              <input type="number" step="0.01" min="0" max="5" name="smallHeadingsSize" />
+            </label>
+          </form>
         </div>
       </div>
     </section>

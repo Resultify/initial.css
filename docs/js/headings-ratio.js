@@ -1,88 +1,170 @@
 /* global getComputedStyle */
-const pageTextSizeForm = document.getElementById('page-text-size')
-const headingsRatioSection = document.getElementById('headings-ratio')
-const fluidHeadingsSection = document.getElementById('fluid-headings')
+/**
+ * #### get root font size
+ * @returns {number}
+ */
+function getRootFontSize () {
+  const rootFontSizeValue = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('font-size').replace('px', ''))
+  return rootFontSizeValue
+}
 
 /**
- * Get default browser text size or root css custom property text size
- * @returns {number} - default text size
+ * #### get --root__font-size css variable from root element
+ * @returns {number}
  */
-function getCssRootFontSize () {
-  let rootFontSize = getComputedStyle(document.documentElement).getPropertyValue('--root__font-size')
-  if (!isNaN(rootFontSize)) {
-    rootFontSize = getComputedStyle(document.documentElement).getPropertyValue('font-size')
+function getRootFontSizeCssVar () {
+  let rootFontSizeCssVar = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--root__font-size'))
+  if (!rootFontSizeCssVar) {
+    rootFontSizeCssVar = 1
   }
-  return parseFloat(rootFontSize.replace('px', ''))
+  return rootFontSizeCssVar
 }
 
 /**
- * ## get headings size ration from css custom property
- * @param {Object} [element] - dom element
- * @returns {number} - headings size ratio
- */
-function getCssHeadingRatio (element) {
-  const headingsRatio = getComputedStyle(element).getPropertyValue('--heading-scale-ratio')
-  return parseFloat(headingsRatio)
-}
-
-/**
- * ## Initialize headings ratio
+ * #### insert root font size value into .show-root-font-size-in-px element
+ * @param {number} value - root font size value
  * @returns undefined
  */
-function initSizeDefaults () {
-  pageTextSizeForm.querySelector('[name="textSize"]').value = getCssRootFontSize()
-  headingsRatioSection.querySelector('[name="headingsRatio"]').value = getCssHeadingRatio(headingsRatioSection)
-  fluidHeadingsSection.querySelector('[name="headingsRatio"]').value = getCssHeadingRatio(fluidHeadingsSection)
+function insertRootFontSizeInElement (value) {
+  const element = document.querySelector('.show-root-font-size-in-px')
+  if (element) {
+    element.innerHTML = `${value} px`
+  }
 }
 
 /**
- * ## Set root text size
- * @param {Object} [event] - event object
+ * #### insert root font size value into input[name="rootFontSize"]
+ * @param {number} value - root font size value
  * @returns undefined
  */
-function setRootTextSize (event) {
-  document.documentElement.style.setProperty('--root__font-size', `${event.target.value}px`)
-  renderHeadingsSize()
+function insertRootFontSizeInInput (value) {
+  /**
+   * @type {?HTMLInputElement}
+   */
+  const inputElement = document.querySelector('[name="rootFontSize"]')
+  if (inputElement) {
+    inputElement.value = String(value)
+  }
 }
 
 /**
- * ## Set headings size ratio
- * @param {Object} [event] - event object
+ * #### insert heading size ratio value into input[name="headingsSizeRatio"]
+ * @param {number} value - heading size ratio value
  * @returns undefined
  */
-function setHeadingRatio (event) {
-  event.target.parentNode.parentNode.parentNode.style.setProperty('--heading-scale-ratio', event.target.value)
-  renderHeadingsSize()
+function setHeadingSizeRatioValue (value) {
+  /**
+   * @type {?HTMLInputElement}
+   */
+  const inputElement = document.querySelector('[name="headingsSizeRatio"]')
+  if (inputElement) {
+    inputElement.value = String(value)
+  }
 }
 
 /**
- * ## Render all headings size
+ * #### get --heading-scale-ratio css variable from root element
+ * @returns {number}
+ */
+function getHeadingSizeRatio () {
+  const headingRatio = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--heading-scale-ratio'))
+  return headingRatio
+}
+
+/**
+ * #### insert heading size ratio value into heading elements
  * @returns undefined
  */
-function renderHeadingsSize () {
-  headingsRatioSection.querySelectorAll('[class^="text-"]').forEach((element) => {
-    element.children[0].innerHTML = `${Math.floor(getComputedStyle(element).getPropertyValue('font-size').replace('px', ''))}px`
+function insertHeadingSizeInElements () {
+  document.querySelectorAll('.show-heading-size-in-px').forEach(element => {
+    if (element.parentNode) {
+      /**
+       * @type {any}
+       */
+      const parentNode = element.parentNode
+      const value = Math.floor(parseFloat(getComputedStyle(parentNode).getPropertyValue('font-size').replace('px', '')))
+      element.innerHTML = `${value} px`
+    }
   })
-
-  fluidHeadingsSection.querySelectorAll('[class^="text-"]').forEach((element) => {
-    element.children[0].innerHTML = `${Math.floor(getComputedStyle(element).getPropertyValue('font-size').replace('px', ''))}px`
-  })
 }
 
-pageTextSizeForm.querySelector('[name="textSize"]').addEventListener('input', setRootTextSize, { once: false, passive: false })
-headingsRatioSection.querySelector('[name="headingsRatio"]').addEventListener('input', setHeadingRatio, { once: false, passive: false })
-fluidHeadingsSection.querySelector('[name="headingsRatio"]').addEventListener('input', setHeadingRatio, { once: false, passive: false })
+/**
+ * #### update root sizes
+ * @param {any} event - event object
+ * @returns undefined
+ */
+function updateRootFontSize (event) {
+  document.documentElement.style.setProperty('--root__font-size', `${event.target?.value}rem`)
+  const rootFontSize = getRootFontSize()
+  insertRootFontSizeInElement(rootFontSize)
+  insertHeadingSizeInElements()
+}
 
-// recalcolate hedings size on resize window event
-window.addEventListener('resize', renderHeadingsSize, { once: false, passive: true })
+/**
+ * #### update heading sizes
+ * @param {any} event - event object
+ * @returns undefined
+ */
+function updateHeadingSizes (event) {
+  document.documentElement.style.setProperty('--heading-scale-ratio', `${event.target.value}`)
+  insertHeadingSizeInElements()
+}
 
+/**
+ * #### add predefined root font size value
+ * @param {any} event - event object
+ * @returns undefined
+ */
+function predefinedRootFontSize (event) {
+  const remValue = parseFloat(event.target.innerHTML.replace('px', '')) / 16
+  insertRootFontSizeInInput(remValue)
+  document.documentElement.style.setProperty('--root__font-size', `${remValue}rem`)
+  const rootFontSize = getRootFontSize()
+  insertRootFontSizeInElement(rootFontSize)
+  insertHeadingSizeInElements()
+}
+
+/**
+ * #### add predefined heading size ratio value
+ * @param {any} event - event object
+ * @returns undefined
+ */
+function predefinedScaleRatio (event) {
+  const val = parseFloat(event.target.innerHTML)
+  setHeadingSizeRatioValue(val)
+  document.documentElement.style.setProperty('--heading-scale-ratio', `${val}`)
+  insertHeadingSizeInElements()
+}
+
+/**
+ * #### init function
+ * @returns undefined
+ */
 function init () {
-  initSizeDefaults()
-  renderHeadingsSize()
+  const rootFontSize = getRootFontSize()
+  const rootFontSizeCssVar = getRootFontSizeCssVar()
+  insertRootFontSizeInInput(rootFontSizeCssVar)
+  insertRootFontSizeInElement(rootFontSize)
+
+  const headingRatio = getHeadingSizeRatio()
+  setHeadingSizeRatioValue(headingRatio)
+  insertHeadingSizeInElements()
+
+  document.querySelector('[name="rootFontSize"]')?.addEventListener('input', updateRootFontSize, { passive: true })
+  document.querySelector('[name="headingsSizeRatio"]')?.addEventListener('input', updateHeadingSizes, { passive: true })
+
+  document.querySelectorAll('.page-text-size-btn').forEach((button) => {
+    button.addEventListener('click', predefinedRootFontSize, { passive: true })
+  })
+  document.querySelectorAll('.headings-size-btn').forEach((button) => {
+    button.addEventListener('click', predefinedScaleRatio, { passive: true })
+  })
+
+  window.addEventListener('resize', insertHeadingSizeInElements, { passive: true })
 }
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init())
+  document.addEventListener('DOMContentLoaded', init)
 } else {
   init()
 }

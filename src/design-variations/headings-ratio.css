@@ -1,22 +1,10 @@
-/* Common Typographic Scale Ratios:
-  1.067 — Minor Second
-  1.125 — Major Second
-  1.200 — Minor Third
-  1.250 — Major Third
-  1.333 — Perfect Fourth
-  1.414 — Augmented Fourth
-  1.500 — Perfect Fifth
-  1.618 — The Golden Ratio
-  custom — Custom Ratio
-*/
 /*
   properties witn two underscores is internal
   and used only for calculations not for actual use
   --__var-bla-bla
 */
-#headings-ratio {
-  --heading-scale-ratio: 1.2;
-
+:root {
+  --heading-scale-ratio: 1.24;
   /* sizes based on scale ratio */
   --__size10: (var(--heading-scale-ratio) * var(--__size9));
   --__size9: (var(--heading-scale-ratio) * var(--__size8));
