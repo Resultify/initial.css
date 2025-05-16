@@ -1,5 +1,5 @@
 /* responsive image */
-:where(img, picture) {
+:where(img, picture, svg, video) {
   /* responsive image */
   max-width: 100%;
   height: auto;
@@ -10,9 +10,4 @@
 /* remove default border from iframe */
 :where(iframe) {
   border: 0;
-}
-
-:where(video) {
-  max-width: 100%;
-  height: auto;
 }

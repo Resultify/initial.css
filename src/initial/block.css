@@ -21,6 +21,7 @@
 /* if soft wrap is not possible use hard wrap */
 :where(p) {
   overflow-wrap: break-word;
+  text-wrap: pretty;
 }
 
 :where(address) {
@@ -89,6 +90,14 @@
   margin-inline: 0;
   padding-inline-start: 0;
   gap: 0 1ch;
+}
+
+/* remove list style from ul and ol with class */
+:where(ul[class], ol[class]) {
+  margin-block: 0;
+  margin-inline: 0;
+  padding-inline-start: 0;
+  list-style: none;
 }
 
 :where(dialog) {

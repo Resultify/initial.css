@@ -44,7 +44,7 @@ input[type="reset"]),
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   touch-action: manipulation;
-  min-width: 9ch;
+  min-width: fit-content;
   text-decoration: none;
   align-items: baseline;
   appearance: none;
